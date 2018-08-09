@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const dogFacts = require('dog-facts')
+const catFacts = require('cat-facts')
 client.login(process.env.TOKEN)
 
 client.on('message', message => {
@@ -10,10 +12,12 @@ client.on('message', message => {
     
   }
   
+  if(message.content.toLowerCase() === `${prefix}dogfact`) {
+  var fact = dogFacts.random()
+  message.channel.send(`dog fact: ${fact}`)
+  }
   
-  
-  
-  
+  if(message.content
   
   
   
