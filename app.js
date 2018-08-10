@@ -8,22 +8,25 @@ client.login(process.env.TOKEN)
 client.on('message', message => {
   var prefix = '++'
 
-  if(message.content.toLowerCase === `${prefix}ping`) {
+  if(message.content.startsWith(`${prefix}ping`)) {
 message.channel.send('ponk')
   }
   
+if(message.content.startsWith(`${prefix}embed`)) {
+  
+  message.channel.send({
 
-  if(message.content.toLowerCase === `${prefix}embed`) {
-    
-    
-    const embed = Discord.MessageEmbed()
-    .setTitle('This is an embed!')
-    .setDescription('This is a description of an embed!')
-    .setFooter('This is the footer of the embed!')
-    
-    message.channel.send(embed)
-  }
+"embed": {
+"title": 'This is the title',
+  "description": "This is a description!",
+  "color": 
+}
+  })
   
   
+  
+  
+  
+}
   
 })
