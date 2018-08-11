@@ -16,5 +16,10 @@ message.channel.send('ponk')
     message.member.send('hello world!\nthis is a new line!')
   }
 
+  if(message.content.startsWith(`${prefix}say`)) {
+    var text = message.content.split(' ').slice(1).join(' ')
+    if(!text) return message.reply('hey, say somethign *im giving up on u*')
+   message.channel.send(text)
+  }
 
   })
