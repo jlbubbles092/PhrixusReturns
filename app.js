@@ -21,5 +21,14 @@ message.channel.send('ponk')
     if(!text) return message.reply('hey, say somethign *im giving up on u*')
    message.channel.send(text)
   }
+  if(message.content.startsWith(`${prefix}stats`)) {
+    
+    var mcount = client.users.size
+    var scount = client.guilds.size
+    var tcount = client.channels.filter(c => c.type === 'text').size
+    var vcount = client.channels.filter(c => c.type === 'voice').size
+    message.reply(`${client.user.use}`)
+    
+  }
 
   })
