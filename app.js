@@ -32,3 +32,9 @@ message.channel.send('ponk')
   }
 
   })
+client.on('message', message => {
+  if(message.mentions.members.first().displayName.includes('[AFK]')) {
+ message.reply('hi')
+
+  }
+})
