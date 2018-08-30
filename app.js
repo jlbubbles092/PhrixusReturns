@@ -28,7 +28,7 @@ message.channel.send('ponk')
     var tcount = client.channels.filter(c => c.type === 'text').size
     var vcount = client.channels.filter(c => c.type === 'voice').size
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
-    
   }
+
 
   })
