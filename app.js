@@ -30,5 +30,6 @@ message.channel.send('ponk')
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
   }
 
+  
 
   })
