@@ -29,14 +29,14 @@ message.channel.send('ponk')
     var vcount = client.channels.filter(c => c.type === 'voice').size
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
   }
-
-  
 if(message.content.startsWith(`${prefix}avatar`)) {
   
   var mention = message.mentions.members.first()
   
   if(!mention) {
     message.channel.send(message.author.displayAvatarURL())
+  } else {
+    message.channel.send(mention.displayAvatarURL())
   }
 }
 
