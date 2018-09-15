@@ -31,5 +31,13 @@ message.channel.send('ponk')
   }
 
   
+if(message.content.startsWith(`${prefix}avatar`)) {
+  
+  var mention = message.mentions.members.first()
+  
+  if(!mention) {
+    message.channel.send(message.author.displayAvatarURL())
+  }
+}
 
   })
