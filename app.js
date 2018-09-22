@@ -4,8 +4,7 @@ const client = new Discord.Client()
 client.login(process.env.TOKEN)
 
 
-//client.on("ready", () => {client.user.setActivity('a game...', {type: 'PLAYING'})})
-
+client.on('ready', () => {client.user.setActivity('a tv show...', {type: 'WATCHING'})})
 
 
 
