@@ -4,8 +4,14 @@ const client = new Discord.Client()
 client.login(process.env.TOKEN)
 
 
-client.on('ready', () => {client.user.setActivity('in dev!', { type: 'LISTENING TO' })});
+//client.on("ready", () => {client.user.setActivity('a game...', {type: 'PLAYING'})})
+
+
+
+
+
 client.on ('message', message => {
+
   var prefix = '++'
 
   if(message.content.startsWith(`${prefix}ping`)) {
