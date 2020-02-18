@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "cat-facts": "^1.0.2",
-    "discord.js": "^11.4.0",
+    "discord.js": "^11.5.1",
     "dog-facts": "^1.0.3",
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "spelling-corrector": "^3.0.0"
   },
   "engines": {
