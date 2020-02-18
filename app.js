@@ -35,30 +35,23 @@ message.channel.send('ponk')
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
   }
 
+if(message.content.startsWith(`${prefix}level`)) {
 
-  if(message.content.startsWith(`${prefix}send`)) {
-    message.channel.send(`send to that channel!`)
-    message.member.guild.channels.find(c => c.name === 'yt-vids').send('hello world! @everyone')
-    
+const xp = require("/app/xp.json");
+  
+  if(!xp[message.author.id]) {
+xp[message.author.id] = {
+  xp: 0,
+  level: 1
+  
+};
     
   }
-let msg = message.content.toUpperCase();
-if(msg.startsWith(prefix + 'SPOTIFY')){
-var user = message.mentions.users.first() || message.author;
-if(user.bot) return message.channel.send("bots cant listen music 😢");
-if(user.presence.game.type == 2 && user.presence.game.name == 'Spotify') {
-var trackImg = user.presence.game.assets.largeImageURL;
-var trackUrl = `https://open.spotify.com/track/${user.presence.game.syncID}`
-var trackName = user.presence.game.details;
-var trackAlbum = user.presence.game.assets.largeText;
-var trackAuthor = user.presence.game.state;
-const embed = new Discord.RichEmbed()
-.setAuthor('Spotify info')
-.setThumbnail(trackImg)
-.setDescription(` Track name : ${trackName}\n📀 Album : ${trackAlbum}\nAuthor(s) : ${trackAuthor}\n**Start listen at: ** ${user.presence.game.timestamps.start.getHours()}:${user.presence.game.timestamps.start.getMinutes()}:${user.presence.game.timestamps.start.getSeconds()}`
-) .addField(`Listen this track : ${trackAuthor} — ${trackName}` )
-              message.channel.send(embed)
-};
-}}
-
-           )
+  
+  const curxp = xp[message.author.id].xp;
+  const curlvl = xp[message.author.id].level
+  const n
+  
+  
+}
+})
