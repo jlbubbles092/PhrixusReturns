@@ -35,7 +35,16 @@ message.channel.send('ponk')
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
   }
 
-if(message.content.startsWith(`${prefix}level`)) {
+if(message.content.startsWith(`${prefix}coinflip`)) {
+
+var choices = [
+  "heads",
+  "tails"
+];
+
+ var output = choices[Math.floor(Math.random()*choices.length)];
+  
+  message.channel.send(`You got **${output}!**`)
   
 }
   
