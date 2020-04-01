@@ -4,8 +4,6 @@ const client = new Discord.Client()
 client.login(process.env.TOKEN)
 
 
-client.on('ready', () => {client.user.setActivity('a tv show...', {type: 'WATCHING'})})
-
 
 
 
@@ -14,7 +12,12 @@ client.on ('message', message => {
   var prefix = '++'
 
   if(message.content.startsWith(`${prefix}ping`)) {
-message.channel.send('ponk')
+const start = Date.now()
+message.channel.send("Pinging...").then(message => {
+
+const end = Date.now()
+message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
+})
   }
   if(message.content.startsWith(`${prefix}dm`)) {
     
