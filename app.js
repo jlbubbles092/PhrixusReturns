@@ -53,8 +53,7 @@ var choices = [
   if(message.content.startsWith(`${prefix}user`)) {
 var name = message.author.tag
 var status = message.author.presence.status
-var game = message.author.presence.activity.name
-message.reply(`User: ${name}\nGame: ${game}\nStatus: ${status}`)
+message.channel.send(`User: ${name}\nStatus: ${status}\n${message.author.presence.activity.type}`)
     
   }
 })
