@@ -50,11 +50,11 @@ var choices = [
   message.channel.send(`You got **${output}!**`)
   
 }
-  if(message.content.startsWith(`${prefix}coinflip`)) {
+  if(message.content.startsWith(`${prefix}user`)) {
 var name = message.author.tag
 var status = message.author.presence.status
-var game = message.author.presence.name
-message.reply(status)
+var game = message.author.presence.activity.name
+message.reply(`User: ${name}\nGame: ${game}\nStatus: ${status}`)
     
   }
 })
