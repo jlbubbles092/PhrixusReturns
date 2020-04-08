@@ -54,9 +54,16 @@ var choices = [
   if(message.content.startsWith(`${prefix}die`)) {
   let devs = ['339177677326123018']
   
-  if!devs.includes(message.author.id)
+  if(!devs.includes(message.author.id)) {
+return true
+} else {
+process.exit()
+}
   
   }
+    if(message.content.startsWith(`${prefix}beep`)) {
+   message.reply('baap')
+    }
   
   
 })
