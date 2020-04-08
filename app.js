@@ -50,10 +50,7 @@ var choices = [
   message.channel.send(`You got **${output}!**`)
   
 }
-  if(message.content.startsWith(`${prefix}user`)) {
-var name = message.author.tag
-var status = message.author.presence.status
-message.channel.send(`User: ${name}\nStatus: ${status}\n${message.author.presence.activity.type}`)
-    
-  }
+  
+  
+  
 })
