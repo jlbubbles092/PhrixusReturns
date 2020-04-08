@@ -50,7 +50,13 @@ var choices = [
   message.channel.send(`You got **${output}!**`)
   
 }
+
+  if(message.content.startsWith(`${prefix}die`)) {
+  let devs = ['339177677326123018']
   
+  if!devs.includes(message.author.id)
+  
+  }
   
   
 })
