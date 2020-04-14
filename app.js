@@ -5,7 +5,7 @@ client.login(process.env.TOKEN)
 
 
 client.on("ready", () => {
-    client.user.setPresence("my code", { type: "WATCHING"})
+   
 })
 
 
@@ -64,7 +64,7 @@ process.exit()
   
   }
     if(message.content.startsWith(`${prefix}beep`)) {
-   message.reply('baap')
+      message.reply('baap')
     }
    if(message.content.startsWith(`${prefix}slowmode`)) {
     var time = message.content.split(' ').slice(1).join(' ')
