@@ -4,7 +4,9 @@ const client = new Discord.Client()
 client.login(process.env.TOKEN)
 
 
-
+client.on("ready", () => {
+    client.user.setPresence("my code", { type: "WATCHING"})
+})
 
 
 client.on ('message', message => {
