@@ -3,9 +3,11 @@ const client = new Discord.Client()
 
 client.login(process.env.TOKEN)
 
-
+//MAKE A TUTORIAL ON THIS SOON vvvv
 client.on("ready", () => {
-   
+console.log('Started!')
+ // client.user.setActivity('TV on Discord!', { type: "WATCHING"})
+  
 })
 
 
