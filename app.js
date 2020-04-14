@@ -64,6 +64,11 @@ process.exit()
     if(message.content.startsWith(`${prefix}beep`)) {
    message.reply('baap')
     }
-  
+   if(message.content.startsWith(`${prefix}slowmode`)) {
+    var time = message.content.split(' ').slice(1).join(' ')
+    if(!time) return message.reply('Please enter a time in seconds!')
+   message.channel.setRateLimitPerUser(time)
+     message.channel.send('Set the slowmode!')
+  }
   
 })
