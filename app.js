@@ -73,21 +73,28 @@ process.exit()
    message.channel.setRateLimitPerUser(time)
      message.channel.send('Set the slowmode!')
   }
-  
-  if(message.content.startsWith(`${prefix}subcount`)) {
-  
-  var request = require('request')
-  var id='UCA3QtGSDbBoS5ogCitr_KQw'
-  var key='AIzaSyBq245nAqHPREW8HT73zwc1KfgHQJcimKI'
-  
-  var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' + id + '&key=' + key;
+  if(message.content.startsWith(`${prefix}subc`)) {
+    
+    var request = require('request')
+    var id = 'UCA3QtGSDbBoS5ogCitr_KQw'
+    var key='AIzaSyCLcINMUAL-BU0oZZO6b29m_vdKBb5SL94'
+    
+    var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + id + "&key=" + key;
     
     request({
+      method: 'GET',
+      url: url
+    }, function (err, response, text) {
+if(err) {
+return
+}
       
-      
-      
-    })
-  
- 
+      var json = JSON.parse(text);
+      var subc = json.items[0].statistics.subscriberCount
+message.channel.send(`${subc} is how many subs that channel has!`)
+      })
+    
+    
   }
+
 })
