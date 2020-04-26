@@ -9,11 +9,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "cat-facts": "^1.0.2",
     "discord.js": "^11.5.1",
-    "dog-facts": "^1.0.3",
     "express": "^4.17.1",
-    "spelling-corrector": "^3.0.0"
+    "request": "^2.88.2"
   },
   "engines": {
     "node": "9.x"

@@ -74,4 +74,20 @@ process.exit()
      message.channel.send('Set the slowmode!')
   }
   
+  if(message.content.startsWith(`${prefix}subcount`)) {
+  
+  var request = require('request')
+  var id='UCA3QtGSDbBoS5ogCitr_KQw'
+  var key='AIzaSyBq245nAqHPREW8HT73zwc1KfgHQJcimKI'
+  
+  var url = 'https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' + id + '&key=' + key;
+    
+    request({
+      
+      
+      
+    })
+  
+ 
+  }
 })
