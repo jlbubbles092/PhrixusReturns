@@ -96,5 +96,8 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     
     
   }
+  
+  
+  
 
 })
