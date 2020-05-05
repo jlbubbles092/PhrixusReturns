@@ -24,14 +24,22 @@ message.delete()
   
 
   var prefix = '++'
-    if(message.content.startsWith(`${prefix}m`)) {
-      var opus = require('opusscript');
- if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-   const dispatcher = connection.play('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', {
-     volume: 0.5
-     
-   });
+  if(message.content.startsWith(`${prefix}stop`)) { 
+  
+  if (message.member.voiceChannel) { 
+   message.member.voiceChannel.leave();
+    message.reply('I left the voice channel!')
+  } else {
+message.reply('Make sure you\'re in a voice channel!')
+}
+  
+  }
+    if(message.content.startsWith(`${prefix}play`)) {
+      
+     const ytdl = require('ytdl-core');
+ if (message.member.voiceChannel) {
+      const connection = await message.member.voiceChannel.join();
+   const dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=ZlAU_w7-Xp8', { filter: 'audioonly' }));
     } else {
       message.reply('You need to join a voice channel first!');
     }

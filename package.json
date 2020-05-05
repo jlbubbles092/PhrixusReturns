@@ -9,13 +9,14 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "@discordjs/opus": "^0.3.2",
     "discord.js": "^11.5.1",
     "express": "^4.17.1",
-    "fs": "^0.0.2",
-    "request": "^2.88.2",
-    "opusscript": "^0.0.7",
     "ffmpeg-static": "^4.2.1",
-    "@discordjs/opus": "^0.3.2"
+    "fs": "^0.0.2",
+    "opusscript": "^0.0.7",
+    "request": "^2.88.2",
+    "ytdl-core": "^2.1.1"
   },
   "engines": {
     "node": "9.x"
