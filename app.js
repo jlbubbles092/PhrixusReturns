@@ -11,6 +11,13 @@ console.log('Big boy bot has started!')
 
 
 client.on ('message', message => {
+const swearWords = ["swear1", "swear2"];
+  if(swearWords.some(word => message.content.includes(word)) ) {
+message.delete
+    message.member.send('')
+    
+}
+  
 
   var prefix = '++'
 
@@ -100,64 +107,4 @@ message.channel.send(`${subc} is how many subs that channel has!`)
   
   
 
-})
-
-client.on ('message', message => {
-  
-  const xp = require('/app/xp.json')
-  let xpAdd = Math.floor(Math.random() * 5 ) + 2
-  if(message.content.startsWith('++')) return
-   else {
-if(!xp[message.author.id]) {
-  xp[message.author.id] = {
-xp: 0,
-    level: 1
-}; 
-}
-
-     let curxp = xp[message.author.id].xp
-     let curlvl = xp[message.author.id].level;
-     let nxtLvl = xp[message.author.id].level * 300
-     xp[message.author.id].xp = curxp + xpAdd;
-     if (nxtLvl <= xp[message.author.id].xp) {
-xp[message.author.id].level = curlvl + 1;
-       
-      let lvlup = new Discord.MessageEmbed()
-      .setDescription(`Yay! You're now at level ${curlvl + 1}`)
-      .setColor(0x2cdd5b)
-      
-      message.reply(lvlup)
-}
-     
-     const fs = require('fs')
-     
-     fs.writeFile('/app/xp.json', JSON.stringify(xp), (err) => {
-       
-       if(err) console.log(err)
-     }) }
-  
-  if(message.content.startsWith(`++rank`)) {
-    
-    let usera = undefined;
-    let cass = undefined;
-if(message.content.search('<@') == -1) {
-  usera = message.author.id
-  cass = 'You'
-} else {
-usera = message.mentions.members.first().id
-  cass = 'They'
-}
-    
-    if(!xp[usera]) {
-      xp[usera] = {
-        xp: 0,
-        level: 1
-        
-      }
-    }
-    const curxp = xp[usera].xp;
-    const curlvl = xp[usera]
-    
-    
-  }
 })
