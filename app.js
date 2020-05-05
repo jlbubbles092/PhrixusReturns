@@ -11,7 +11,7 @@ console.log('The bot has started!')
 })
 
 
-client.on ('message', message => {
+client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
   
 const swearWords = ['swear1', 'swear2']
@@ -24,6 +24,18 @@ message.delete()
   
 
   var prefix = '++'
+    if(message.content.startsWith(`${prefix}m`)) {
+      var opus = require('opusscript');
+ if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+   const dispatcher = connection.play('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3', {
+     volume: 0.5
+     
+   });
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
+    }
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()
