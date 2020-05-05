@@ -25,40 +25,6 @@ message.delete()
 
   var prefix = '++'
   
-  
-  if(message.content.startsWith(`${prefix}stop`)) { 
-  
-  if (message.member.voiceChannel) { 
-   message.member.voiceChannel.leave();
-    message.reply('I left the voice channel!')
-  } else {
-message.reply('Make sure you\'re in a voice channel!')
-}
-  
-  }
-    if(message.content.startsWith(`${prefix}play`)) {
-      
-         var search = require('youtube-search');
- 
-var opts = {
-  maxResults: 1,
-  key: 'AIzaSyDkiPqMjIWOExYjboDpVNYgNqLrJvbX8IU'
-};
- 
-search('hello', opts, function(err, results) {
-  if(err) return console.log(err);
- 
-  console.log(results[0].id);
-}); 
-      
-     const ytdl = require('ytdl-core');
- if (message.member.voiceChannel) {
-      const connection = await message.member.voiceChannel.join();
-   const dispatcher = connection.playStream(ytdl('https://www.youtube.com/watch?v=ZlAU_w7-Xp8', { filter: 'audioonly' }));
-    } else {
-      message.reply('You need to join a voice channel first!');
-    }
-    }
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()
