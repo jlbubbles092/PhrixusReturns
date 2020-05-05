@@ -25,21 +25,6 @@ message.delete()
 
   var prefix = '++'
   
-  if(message.content.startsWith(`${prefix}st`)) {
-   var search = require('youtube-search');
- 
-var opts = {
-  maxResults: 1,
-  key: 'AIzaSyDkiPqMjIWOExYjboDpVNYgNqLrJvbX8IU'
-};
- 
-search('hello', opts, function(err, results) {
-  if(err) return console.log(err);
- 
-  console.log(results.items.id.videoId);
-}); 
-  }
-  
   
   if(message.content.startsWith(`${prefix}stop`)) { 
   
@@ -53,7 +38,18 @@ message.reply('Make sure you\'re in a voice channel!')
   }
     if(message.content.startsWith(`${prefix}play`)) {
       
-      
+         var search = require('youtube-search');
+ 
+var opts = {
+  maxResults: 1,
+  key: 'AIzaSyDkiPqMjIWOExYjboDpVNYgNqLrJvbX8IU'
+};
+ 
+search('hello', opts, function(err, results) {
+  if(err) return console.log(err);
+ 
+  console.log(results[0].id);
+}); 
       
      const ytdl = require('ytdl-core');
  if (message.member.voiceChannel) {
