@@ -11,12 +11,13 @@ console.log('Big boy bot has started!')
 
 
 client.on ('message', message => {
-const swearWords = ["swear1", "swear2"];
-  if(swearWords.some(word => message.content.includes(word)) ) {
-message.delete
-    message.member.send('')
-    
-}
+/* const swearWords = ['swear1', 'swear2']
+ if(swearWords.some(word => message.content.includes(word)) ) {
+message.delete()
+
+  message.member.send('That word is not allowed!')
+  
+} */
   
 
   var prefix = '++'
