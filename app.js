@@ -5,8 +5,8 @@ client.login(process.env.TOKEN)
 
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
-console.log('Big boy bot has started!')
-  client.user.setActivity('a TV show...', { type: "WATCHING"})
+console.log('The bot has started!')
+  client.user.setActivity('something...', { type: "WATCHING"})
   
 })
 
@@ -43,7 +43,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   //SAY COMMAND (episode 3)
   if(message.content.startsWith(`${prefix}say`)) {
     var text = message.content.split(' ').slice(1).join(' ')
-    if(!text) return message.reply('hey, say somethign *im giving up on u*')
+    if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
   
