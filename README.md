@@ -1,27 +1,19 @@
-WillHasAwesomeShoes Discord Bot Tutorial
+WillHasAwesomeShoes Discord.js Bot Tutorial
 ==========================
 
-Click `Show` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-**Glitch** is the friendly community where you'll build the app of your dreams. Glitch lets you instantly create, remix, edit, and host an app, bot or site, and you can invite collaborators or helpers to simultaneously edit code with you.
-
-Find out more [about Glitch](https://glitch.com/about).
+View the tutorials playlist [by clicking here](https://www.youtube.com/playlist?list=PLAN8eO5m1qz9oeE4UkgOtXdh4tmNoxN87).
 
 
-Your Project
+Using This Source Code
 ------------
 
-On the front-end,
-- edit `public/client.js`, `public/style.css` and `views/index.html`
-- drag in `assets`, like images or music, to add them to your project
+By using this source code in a large quantity (ex: copy/pasting a command), you agree to:
 
-On the back-end,
-- your app starts at `server.js`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env` (nobody can see this but you and people you invite)
+- not claim the code as your own unless you followed the video tutorial
+- share the youtube playlist instead of sharing this project (when sharing)
 
 
-Made by [Fog Creek](https://fogcreek.com/)
+Creating Your Bot Using This Code
 -------------------
+Want to use this project as a starting base for your own Discord.js bot? There are a few things to note.
 
-\ ゜o゜)ノ
