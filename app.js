@@ -119,6 +119,8 @@ return
 message.channel.send(`${subc} is how many subs that channel has!`)
       }) }
   
+  //BAN AND KICK COMMANDS (episode 13)
+  
   
   
 
