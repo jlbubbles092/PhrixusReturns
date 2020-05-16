@@ -43,13 +43,15 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
     message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\nThese are all the commands!')
   }
  //UPTIME COMMAND
+if(message.content.startsWith(`${prefix}uptime`)) {
   let totalSeconds = (client.uptime / 1000);
   let days = Math.floor(totalSeconds / 86400);
   let hours = Math.floor(totalSeconds / 3600);
   totalSeconds %= 3600;
   let minutes = Math.floor(totalSeconds / 60);
   let seconds = totalSeconds % 60;
-  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
+  message.reply(`Uptime: ${days} day(s), ${hours} hour(s), ${minutes} minute(s), and ${seconds} second(s).`)
+}
   //INVITE COMMAND
   
   if(message.content.startsWith(`${prefix}invite`)) {
