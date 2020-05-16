@@ -34,6 +34,22 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
+//CREDITS COMMAND
+  if(message.content.startsWith(`${prefix}credits`)) {
+    message.channel.send("Credits:\nDeveloper: jlbubbles0920#3044\n Inspiring Developer: SinglePringle#0001\n All people are here!")
+  }
+//HELP COMMAND
+  if(message.content.startsWith(`${prefix}credits`)) {
+    message.channel.send("")
+//UPTIME COMMAND
+  if (message.content.startsWith(`${prefix}uptime`)) {
+const start1 = Date.start()
+message.channel.send("Finding uptime...").then(message => {
+  
+const end1 = Date.now()
+message.edit(`:ping_pong: Finded uptime: **${(end1 - start1)}**ms!`)
+})
+  }
   //DM COMMAND (episode 2)
   
   if(message.content.startsWith(`${prefix}dm`)) {
