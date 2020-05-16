@@ -53,13 +53,34 @@ if(message.content.startsWith(`${prefix}uptime`)) {
   message.reply(`Uptime: ${days} day(s), ${hours} hour(s), ${minutes} minute(s), and ${seconds} second(s).`)
 }
   //Kick command
-  if(message.content.startsWith(`${prefix}kick`)) {
-    var kick = message.content.split(' ').slice(1).join(' ')
-    if(!kick) return message.reply('Please type the players name.')
-     message.channel.send("Kicked the player.")
-    var member = kick.message
-    member.kick()
-  }  
+      if (message.content.startsWith("p!kick")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // Kick
+        member.kick().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
+});
+ client.on("message", (message) => {
+    if (message.content.startsWith("p!ban")) {
+        // Easy way to get member object though mentions.
+        var member= message.mentions.members.first();
+        // ban
+        member.ban().then((member) => {
+            // Successmessage
+            message.channel.send(":wave: " + member.displayName + " has been successfully banned https://gfycat.com/playfulfittingcaribou :point_right: ");
+        }).catch(() => {
+             // Failmessage
+            message.channel.send("Access Denied");
+        });
+    }
+});
+ 
   //INVITE COMMAND
   
   if(message.content.startsWith(`${prefix}invite`)) {
