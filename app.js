@@ -6,7 +6,7 @@ client.login(process.env.TOKEN)
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
 console.log('The bot has started!')
-  client.user.setActivity('something...', { type: "WATCHING"})
+  client.user.setActivity('Giveaways!', { type: "WATCHING"})
   
 })
 
