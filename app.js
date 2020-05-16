@@ -40,7 +40,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\nThese are all the commands!')
+    message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -115,16 +115,16 @@ if (message.content.startsWith(`${prefix}kick`)) {
          * There are big differences between a user and a member
          */
         member
-          .kick('Optional reason that will display in the audit logs')
+          .ban('Optional reason that will display in the audit logs')
           .then(() => {
             // We let the message author know we were able to kick the person
-            message.reply(`Successfully kicked ${user.tag}`);
+            message.reply(`Successfully banned ${user.tag}`);
           })
           .catch(err => {
             // An error happened
             // This is generally due to the bot not being able to kick the member,
             // either due to missing permissions or role hierarchy
-            message.reply('I was unable to kick the member');
+            message.reply('I was unable to ban the member');
             // Log the error
             console.error(err);
           });
@@ -134,7 +134,7 @@ if (message.content.startsWith(`${prefix}kick`)) {
       }
       // Otherwise, if no user was mentioned
     } else {
-      message.reply("You didn't mention the user to kick!");
+      message.reply("You didn't mention the user to ban!");
     }
   }
 
