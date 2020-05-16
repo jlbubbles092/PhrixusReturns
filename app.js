@@ -52,6 +52,14 @@ if(message.content.startsWith(`${prefix}uptime`)) {
   let seconds = totalSeconds % 60;
   message.reply(`Uptime: ${days} day(s), ${hours} hour(s), ${minutes} minute(s), and ${seconds} second(s).`)
 }
+  //Kick command
+  if(message.content.startsWith(`${prefix}kick`)) {
+    var kick = message.content.split(' ').slice(1).join(' ')
+    if(!kick) return message.reply('Please type the players name.')
+     message.channel.send("Kicked the player.")
+    var member = kick.message
+    member.kick()
+  }  
   //INVITE COMMAND
   
   if(message.content.startsWith(`${prefix}invite`)) {
