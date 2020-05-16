@@ -23,7 +23,7 @@ message.delete()
 }
   
 
-  var prefix = '++'
+  var prefix = 'p!'
   
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
@@ -36,12 +36,13 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
-    message.channel.send("Credits:\nDeveloper: jlbubbles0920#3044\n Inspiring Developer: SinglePringle#0001\n All people are here!")
+    message.channel.send('Credits:\nDeveloper: jlbubbles0920#3044\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
-    message.channel.send("")
-//UPTIME COMMAND
+    message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\nThese are all the commands!')
+  }
+    //UPTIME COMMAND
   if (message.content.startsWith(`${prefix}uptime`)) {
 const start1 = Date.start()
 message.channel.send("Finding uptime...").then(message => {
@@ -50,7 +51,13 @@ const end1 = Date.now()
 message.edit(`:ping_pong: Finded uptime: **${(end1 - start1)}**ms!`)
 })
   }
-  //DM COMMAND (episode 2)
+  //INVITE COMMAND
+  
+  if(message.content.startsWith(`${prefix}invite`)) {
+    
+    message.member.send('Use this link to invite Phrixus:\nhttps://discord.com/api/oauth2/authorize?client_id=711247052193136660&permissions=8&scope=bot')
+  }
+    //DM COMMAND (episode 2)
   
   if(message.content.startsWith(`${prefix}dm`)) {
     
@@ -90,7 +97,7 @@ var choices = [
 
   //DIE COMMAND / RESTART COMMAND (episode 7)
   if(message.content.startsWith(`${prefix}die`)) {
-  let devs = ['339177677326123018']
+  let devs = ['665651832118313007','699045551496364102']
   
   if(!devs.includes(message.author.id)) {
 return true
@@ -117,7 +124,7 @@ process.exit()
   if(message.content.startsWith(`${prefix}subc`)) {
     
     var request = require('request')
-    var id = 'UCA3QtGSDbBoS5ogCitr_KQw'
+    var id = 'UCY8L8VQGszBVLxdxjezu92g'
     var key= process.env.YT_KEY
     
     var url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + id + "&key=" + key;
