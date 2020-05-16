@@ -39,18 +39,17 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
     message.channel.send('Credits:\nDeveloper: jlbubbles0920#3044\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
-  if(message.content.startsWith(`${prefix}credits`)) {
+  if(message.content.startsWith(`${prefix}help`)) {
     message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\nThese are all the commands!')
   }
-    //UPTIME COMMAND
-  if (message.content.startsWith(`${prefix}uptime`)) {
-const start1 = Date.start()
-message.channel.send("Finding uptime...").then(message => {
-  
-const end1 = Date.now()
-message.edit(`:ping_pong: Finded uptime: **${(end1 - start1)}**ms!`)
-})
-  }
+ //UPTIME COMMAND
+  let totalSeconds = (client.uptime / 1000);
+  let days = Math.floor(totalSeconds / 86400);
+  let hours = Math.floor(totalSeconds / 3600);
+  totalSeconds %= 3600;
+  let minutes = Math.floor(totalSeconds / 60);
+  let seconds = totalSeconds % 60;
+  let uptime = `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`;
   //INVITE COMMAND
   
   if(message.content.startsWith(`${prefix}invite`)) {
@@ -145,5 +144,4 @@ message.channel.send(`${subc} is how many subs that channel has!`)
 
     
   
-
 })
