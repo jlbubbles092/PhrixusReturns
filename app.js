@@ -36,7 +36,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
-    message.channel.send('Credits:\nDeveloper: jlbubbles0920#3044\n Inspiring Developer: SinglePringle#0001\n All people are here!')
+    message.channel.send('Credits:\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
@@ -144,13 +144,13 @@ if (message.content.startsWith(`${prefix}kick`)) {
   
   if(message.content.startsWith(`${prefix}invite`)) {
     
-    message.member.send('Use this link to invite Phrixus:\nhttps://discord.com/api/oauth2/authorize?client_id=711247052193136660&permissions=8&scope=bot')
+    message.member.send('Use this link to invite Phrixus:\nhttps://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
   }
     //DM COMMAND (episode 2)
   
   if(message.content.startsWith(`${prefix}dm`)) {
     
-    message.member.send('hello world!\nthis is a new line!')
+    message.member.send('Hello fellow member of Giveaways!\nThis is a new world!')
   }
 
   //SAY COMMAND (episode 3)
@@ -186,7 +186,7 @@ var choices = [
 
   //DIE COMMAND / RESTART COMMAND (episode 7)
   if(message.content.startsWith(`${prefix}die`)) {
-  let devs = ['665651832118313007','699045551496364102']
+  let devs = ['711439928239718422','665651832118313007']
   
   if(!devs.includes(message.author.id)) {
 return true
