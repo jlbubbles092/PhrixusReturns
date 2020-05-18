@@ -6,7 +6,8 @@ client.login(process.env.TOKEN)
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
 console.log('The bot has started!')
-  client.user.setActivity("**-(clien, { type: "WATCHING"})
+  var scount1 = client.guilds.size.join
+  client.user.setActivity(`${scount1} servers.`, { type: "WATCHING"})
   
 })
 
