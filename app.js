@@ -28,10 +28,12 @@ message.delete()
 //PURGE COMMAND
 if(message.content.startsWith(`${prefix}purge`)) {
   var text = message.content.split(' ').slice(1).join(' ')
-    if(!text) return message.reply('Type a number of messages you want to delete.')
-   message.channel.delete(text)
+    if(text = (1 - 1000000000000)
+   message.delete()
+  
   message.channel.send(`Deleted ${text} messages.`)
-  }
+      
+  }}
   
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
