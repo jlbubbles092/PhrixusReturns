@@ -6,8 +6,8 @@ client.login(process.env.TOKEN)
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
 console.log('The bot has started!')
-  var scount1 = client.guilds.size.join
-  client.user.setActivity(`${scount1} servers.`, { type: "WATCHING"})
+  var scount1 = client.guilds.size
+  client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
   
 })
 
@@ -25,6 +25,13 @@ message.delete()
   
 
   var prefix = 'p!'
+//PURGE COMMAND
+if(message.content.startsWith(`${prefix}purge`)) {
+  var text = message.content.split(' ').slice(1).join(' ')
+    if(!text) return message.reply('Type a number of messages you want to delete.')
+   message.channel.delete(text)
+  message.channel.send(`Deleted ${text} messages.`)
+  }
   
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
