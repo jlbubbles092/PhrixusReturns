@@ -231,9 +231,17 @@ return
       var subc = json.items[0].statistics.subscriberCount
 message.channel.send(`${subc} is how many subs that channel has!`)
       }) }
+  
+  
   if(message.content.startsWith(`${prefix}lyrics`)) {
-    const genius = require("")
-  }
+    const genius = require("genius-lyrics")
+    const G = new genius.Client(process.env.GENIUS)
+    
+    G.tracks.search(message.content.split(' ').slice(1).join(' '), {limit: 1})
+    .then(results => {
+  const song = results[0]  
+  message.channel.send(`**${song.artist.name} - ${song.title}`)
+})
     
   
-})
+  }
