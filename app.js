@@ -38,7 +38,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
-    message.channel.send('Credits:\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
+    message.channel.send('Credits:\nOwner: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
