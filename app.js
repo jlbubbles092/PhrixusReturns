@@ -40,8 +40,6 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
-//SCHOOL COMMAND
-  if
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
     message.channel.send('The commands are:\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
@@ -189,15 +187,12 @@ var choices = [
 
   //DIE COMMAND / RESTART COMMAND (episode 7)
   if(message.content.startsWith(`${prefix}die`)) {
-  let devs = ['711439928239718422','665651832118313007','339177677326123018']
-  
-  if(!devs.includes(message.author.id)) {
-return true
-} else {
-process.exit()
+client.user.setActivity('offline for 6 seconds.',{ type: "PLAYING"})
+process.exit(6).then()
+    var scount 1
+    var for12 = client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
+    for12
 }
-  
-  }
   
   //TESTING COMMAND (episode 7)
     if(message.content.startsWith(`${prefix}beep`)) {
