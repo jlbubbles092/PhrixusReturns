@@ -42,7 +42,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
+    message.channel.send('The commands are:\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -240,8 +240,11 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     G.tracks.search(message.content.split(' ').slice(1).join(' '), {limit: 1})
     .then(results => {
   const song = results[0]  
-  message.channel.send(`**${song.artist.name} - ${song.title}`)
+  message.channel.send(`**${song.artist.name} - ${song.title}**\n<${song.url}>`) //song.lyrics
 })
-    
+    .catch(err => message.reply(err))
   
   }
+
+
+})
