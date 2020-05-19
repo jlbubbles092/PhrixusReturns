@@ -231,8 +231,9 @@ return
       var subc = json.items[0].statistics.subscriberCount
 message.channel.send(`${subc} is how many subs that channel has!`)
       }) }
-  
-
+  if(message.content.startsWith(`${prefix}lyrics`)) {
+    const genius = require("")
+  }
     
   
 })
