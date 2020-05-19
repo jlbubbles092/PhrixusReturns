@@ -187,11 +187,18 @@ var choices = [
 
   //DIE COMMAND / RESTART COMMAND (episode 7)
   if(message.content.startsWith(`${prefix}die`)) {
-client.user.setActivity('offline for 6 seconds.',{ type: "PLAYING"})
-process.exit(6).then()
-    var scount 1
+client.user.setActivity(`- exit code: ${exitCode}`,{ type: "PLAYING"})
+  var exitCode = number[Math.floor(Math.random()*number.length)];
+  var number = [
+    "100",
+    "200",
+    "300",
+    "400"
+    ""
+  var scount1 = client.guilds.size
+process.exit(621075).then()
     var for12 = client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
-    for12
+    for12.start(true)
 }
   
   //TESTING COMMAND (episode 7)
