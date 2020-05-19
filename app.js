@@ -38,7 +38,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
-    message.channel.send('Credits:\nOwner: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
+    message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
@@ -54,6 +54,7 @@ if(message.content.startsWith(`${prefix}uptime`)) {
   let seconds = totalSeconds % 60;
   message.reply(`Uptime: ${days} day(s), ${hours} hour(s), ${minutes} minute(s), and ${seconds} second(s).`)
 }
+  
   //Kick command
 if (message.content.startsWith(`${prefix}kick`)) {
   // If the message content starts with "!kick"
@@ -100,10 +101,8 @@ if (message.content.startsWith(`${prefix}kick`)) {
 }
   //Ban COMMAND
   if (message.content.startsWith(`${prefix}ban`)) {
-  // If the message content starts with "!kick"
+  // If the message content starts with "!ban"
   if (message.content.startsWith('p!ban')) {
-    // Assuming we mention someone in the message, this will return the user
-    // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
     const user = message.mentions.users.first();
     // If we have a user mentioned
     if (user) {
@@ -112,7 +111,7 @@ if (message.content.startsWith(`${prefix}kick`)) {
       // If the member is in the guild
       if (member) {
         /**
-         * Kick the member
+         * Ban the member
          * Make sure you run this on a member, not a user!
          * There are big differences between a user and a member
          */
