@@ -142,15 +142,15 @@ if (message.content.startsWith(`${prefix}kick`)) {
 
 }
   //PLAY MUSIC
-  if(message.content.startsWith(${prefix}play)) {
   const { Command } = require('discord.js-commando');
 const { MessageEmbed } = require('discord.js');
 const Youtube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const { youtubeAPI } = require('../../config.json');
+const { youtubeAPI } = require('process.env.youtubeAPI');
 const youtube = new Youtube(process.env.youtubeAPI);
 
-module.exports = class PlayCommand extends Command {
+if(message.content.startsWith(${prefix}play)) {
+  module.exports = class PlayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'play',
@@ -175,7 +175,7 @@ module.exports = class PlayCommand extends Command {
         }
       ]
     });
-  }
+  }}
 
   async run(message, { query }) {
     const voiceChannel = message.member.voice.channel;
@@ -372,70 +372,6 @@ module.exports = class PlayCommand extends Command {
             })
           )
           .on('start', function() {
-            message.guild.musicData.songDispatcher = dispatcher;
-            dispatcher.setVolume(message.guild.musicData.volume);
-            const videoEmbed = new MessageEmbed()
-              .setThumbnail(queue[0].thumbnail)
-              .setColor('#e9f931')
-              .addField('Now Playing:', queue[0].title)
-              .addField('Duration:', queue[0].duration);
-            if (queue[1]) videoEmbed.addField('Next Song:', queue[1].title);
-            message.say(videoEmbed);
-            message.guild.musicData.nowPlaying = queue[0];
-            return queue.shift();
-          })
-          .on('finish', function() {
-            if (queue.length >= 1) {
-              return classThis.playSong(queue, message);
-            } else {
-              message.guild.musicData.isPlaying = false;
-              message.guild.musicData.nowPlaying = null;
-              message.guild.musicData.songDispatcher = null;
-              return message.guild.me.voice.channel.leave();
-            }
-          })
-          .on('error', function(e) {
-            message.say('Cannot play song');
-            console.error(e);
-            message.guild.musicData.queue.length = 0;
-            message.guild.musicData.isPlaying = false;
-            message.guild.musicData.nowPlaying = null;
-            message.guild.musicData.songDispatcher = null;
-            return message.guild.me.voice.channel.leave();
-          });
-      })
-      .catch(function(e) {
-        console.error(e);
-        return message.guild.me.voice.channel.leave();
-      });
-  }
-  static constructSongObj(video, voiceChannel) {
-    let duration = this.formatDuration(video.duration);
-    if (duration == '00:00') duration = 'Live Stream';
-    return {
-      url: `https://www.youtube.com/watch?v=${video.raw.id}`,
-      title: video.title,
-      rawDuration: video.duration,
-      duration,
-      thumbnail: video.thumbnails.high.url,
-      voiceChannel
-    };
-  }
-  // prettier-ignore
-  static formatDuration(durationObj) {
-    const duration = `${durationObj.hours ? (durationObj.hours + ':') : ''}${
-      durationObj.minutes ? durationObj.minutes : '00'
-    }:${
-      (durationObj.seconds < 10)
-        ? ('0' + durationObj.seconds)
-        : (durationObj.seconds
-        ? durationObj.seconds
-        : '00')
-    }`;
-    return duration;
-  }
-};
-  })
 
   //INVITE COMMAND
   
