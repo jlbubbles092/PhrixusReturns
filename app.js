@@ -14,7 +14,7 @@ dbl.webhook.on('vote', vote => {
 });
 
 app.get('/', (req, res) => {
-  print("...")
+  // ...
 });
 
 server.listen(5000, () => {
