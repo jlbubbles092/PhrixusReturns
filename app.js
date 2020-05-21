@@ -5,12 +5,13 @@ client.login(process.env.TOKEN)
 
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
+    setInterval(() => {
+        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+    }, 1800000);
 console.log('The bot has started!')
   var scount1 = client.guilds.size
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
-  
-})
-
+});
 
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
