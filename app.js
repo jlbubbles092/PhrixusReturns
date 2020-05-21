@@ -1,37 +1,16 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const DBL = require("dblapi.js");
-const dbl = new DBL(process.env.TOKEN, client);
-
-// Optional events
-dbl.on('posted', () => {
-  console.log('Server count posted!');
-})
-
-dbl.on('error', e => {
- console.log(`Oops! ${e}`);
-})
-
 
 client.login(process.env.TOKEN)
 
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
-  dbl.webhook.on('vote', vote => {
-    const dbl = new DBL(process.env.TOKEN, { webhookPort: 5000, webhookAuth: 'password' });
-    console.log(`User with ID ${vote.user} just voted!`);
-  });
-  dbl.webhook.on('ready', hook => {
-    const dbl = new DBL(process.env.TOKEN, { webhookPort: 5000, webhookAuth: 'password' });
-  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
-});
-  setInterval(() => {
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
-    }, 1800000);
 console.log('The bot has started!')
   var scount1 = client.guilds.size
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
-});
+  
+})
+
 
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
