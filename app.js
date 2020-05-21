@@ -47,6 +47,8 @@ client.login(process.env.TOKEN)
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
     setInterval(() => {
+        dbl.postStats(serverCount)
+      var serverCount = client.guilds.size
         dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
     }, 1800000);
 console.log('The bot has started!')
@@ -56,8 +58,6 @@ console.log('The bot has started!')
 
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
- dbl.postStats(serverCount)
-  var serverCount = client.guilds.size
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
 message.delete()
