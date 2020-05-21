@@ -28,11 +28,9 @@ dbl.on('posted', () => {
 dbl.on('error', e => {
  console.log(`Oops! ${e}`);
 })
-
-.postStats(serverCount, [shardId], [shardCount])
-
 dbl.getStats("711559158603972740").then(stats => {
     console.log(stats)
+  var id = '711629939815874612'
   .getBot(id)
 });
 
@@ -58,7 +56,8 @@ console.log('The bot has started!')
 
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
-  
+ dbl.postStats(serverCount)
+  var serverCount = client.guilds.size
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
 message.delete()
