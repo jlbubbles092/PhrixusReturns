@@ -197,12 +197,12 @@ return true
 }
   //UNSCHOOL COMMAND
 if(message.content.startsWith(`${prefix}unschool`)) {
+  message.channel.send("Now you can contact him.")
   let owner = ['711439928239718422']
   
   if(!owner.includes(message.author.id)) {
 return true
   } else {
-    message.channel.send("Now you can contact him.")
     process.exit()
   }
 }
