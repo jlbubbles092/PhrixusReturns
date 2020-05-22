@@ -85,7 +85,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
+    message.channel.send('The commands are:\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -183,6 +183,26 @@ if (message.content.startsWith(`${prefix}kick`)) {
   }
 
 
+}
+  //SCHOOL COMMAND
+if(message.content.startsWith(`${prefix}school`)) {
+  let owner = ['711439928239718422']
+  
+  if(!owner.includes(message.author.id)) {
+return true
+} else {
+  client.user.setActivity('the owner do his homework.',{ type: "WATCHING"})
+  }
+}
+  //UNSCHOOL COMMAND
+if(message.content.startsWith(`${prefix}unschool`)) {
+  let owner = ['711439928239718422']
+  
+  if(!owner.includes(message.author.id)) {
+return true
+  } else {
+    process.exit()
+  }
 }
   //INVITE COMMAND
   
