@@ -78,15 +78,6 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
- //SCHOOL COMMAND 
-  if(message.content.startsWith(`${prefix}school`)) {
-    let owners = "711439928239718422"
-    
-    if(!owners.includes(message.author.id)) {
-return true
-} else {
-client.user.setActivity(`the owner of the bot do his homework.`,{ type: "WATCHING"})
-  }}
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
