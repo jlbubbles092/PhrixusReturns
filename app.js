@@ -208,7 +208,7 @@ return true
   
   if(message.content.startsWith(`${prefix}invite`)) {
     
-    message.member.send('Use this link to invite Phrixus:\nhttps://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
+    message.member.send('Use this link to invite Phrixus, our bot:\nhttps://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
   }
     //DM COMMAND (episode 2)
   
