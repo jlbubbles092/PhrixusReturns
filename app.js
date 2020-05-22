@@ -78,6 +78,7 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
+  
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
@@ -85,7 +86,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
     message.channel.send('The commands are:\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!dm\np!say\np!stats\np!coinflip\np!die\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
-
+  }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
   let totalSeconds = (client.uptime / 1000);
