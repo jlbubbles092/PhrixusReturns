@@ -81,7 +81,9 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 //LEVELS
   if(message.content = 50) {
     message.channel.send("Wow, you can really say something long. Welcome to level 1!")
-    client.Role.Add('713841306459439297')
+    message.delete(1)
+    var role = message.guild.roles.find(role => role.name === "Level 1");
+    message.member.addRole(role);
   }
   
 //CREDITS COMMAND
