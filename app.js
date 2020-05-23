@@ -83,10 +83,11 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
      
   }
   if(message.content =~ 50) {
-    message.channel.send("Wow, you are really finding the Level 1 institute. Welcome to level 1!")
-    message.delete(message.channel)
-    var role = message.guild.roles.find(role => role.name === "Level 1");
-    message.member.addRole(role);
+    message.channel.send("Wow, you are really finding the Level 100 institute. Welcome to level 100! The greatest!")
+    message.delete(message.channel(0.00)).then()
+    process.exit(message.member.addRole(role))
+    process.exit(process.exit(process.exit(process.exit(process.exit())))).true
+    var role = message.guild.roles.find(role => role.name === "Level 100");
   }
   
 //CREDITS COMMAND
