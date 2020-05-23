@@ -4,7 +4,7 @@ const http = require('http');
 
 const app = express();
 const server = http.createServer(app);
-const dbl = new DBL('NzExNjI5OTM5ODE1ODc0NjEy.Xsk22A.fhTM115lVj8SSMQy1UIXi3FMstk', { webhookAuth: 'password', webhookServer: server });
+const dbl = new DBL('NzExNjI5OTM5ODE1ODc0NjEy.Xsk22A.fhTM115lVj8SSMQy1UIXi3FMstk', { webhookAuth: 'password', webhookServer: 713559957391278151 });
 
 dbl.webhook.on('ready', hook => {
   console.log(`Webhook running with path ${hook.path}`);
@@ -227,18 +227,19 @@ return true
   }
   //PREVENT p!say
       if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
+        process.repeat()
         message.channel.send("I am sorry, I cannot repeat p! say.")
-    }
+      }
   
   //STATS COMMAND (episode 4)
-  if(message.content.startsWith(`${prefix}stats`))
+  if(message.content.startsWith(`${prefix}stats`)) {
     
     var mcount = client.users.size
     var scount = client.guilds.size
     var tcount = client.channels.filter(c => c.type === 'text').size
     var vcount = client.channels.filter(c => c.type === 'voice').size
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
-  })
+  }
 
   //COINFLIP COMMAND (episode 5)
 if(message.content.startsWith(`${prefix}coinflip`)) {
@@ -304,4 +305,4 @@ message.channel.send(`${subc} is how many subs that channel has!`)
   }
 
 
-)
+})
