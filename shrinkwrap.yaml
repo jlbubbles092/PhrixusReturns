@@ -2,6 +2,7 @@ dependencies:
   '@discordjs/opus': 0.3.2
   dblapi.js: 2.4.0
   discord.js: 11.6.4
+  eris: 0.13.1
   express: 4.17.1
   ffmpeg-static: 4.2.2
   fs: 0.0.2
@@ -48,7 +49,7 @@ packages:
       integrity: sha512-T/ubykd4Xi19vDfw7/Oe+iTQBJ28yMI2PQAzK+Zue0PB9OpEYaeIXU7k5255061RwL+rHX9w7P/P2of+x2Vu2A==
   /@types/cheerio/0.22.18:
     dependencies:
-      '@types/node': 14.0.4
+      '@types/node': 14.0.5
     dev: false
     resolution:
       integrity: sha512-Fq7R3fINAPSdUEhOyjG4iVxgHrOnqDJbY0/BUuiN0pvD/rfmZWekVZnv+vcs8TtpA2XF50uv50LaE4EnpEL/Hw==
@@ -56,10 +57,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5SCfvCxV74kzR3uWgTYiGxrd69TbT1I6+cMx1A5kEly/IVveJBimtAMlXiEyVFn5DvUFewQWxOOiJhlxeQwxgA==
-  /@types/node/14.0.4:
+  /@types/node/14.0.5:
     dev: false
     resolution:
-      integrity: sha512-k3NqigXWRzQZVBDS5D1U70A5E8Qk4Kh+Ha/x4M8Bt9pF0X05eggfnC9+63Usc9Q928hRUIpIhTQaXsZwZBl4Ew==
+      integrity: sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -141,10 +142,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tG6JCTSpWR8tL2+G1+ap8bP+dqg=
-  /aws4/1.9.1:
+  /aws4/1.10.0:
     dev: false
     resolution:
-      integrity: sha512-wMHVg2EOHaMRxbzgFJ9gtjOOCrI80OHLG14rxi28XwOW8ux6IiEbRCGGGqCtdAIg4FQCbW20k9RsT4y3gJlFug==
+      integrity: sha512-3YDiu347mtVtjpyV3u5kVqQLP242c06zwDOgpeRnybmXlYYsLbtTrUBUm8i8srONt+FWobl5aibnU1030PeeuA==
   /axios/0.18.1:
     dependencies:
       follow-redirects: 1.5.10
@@ -466,6 +467,17 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-6u0VYSCo/OW6IoD5WCLLy9JUGARbamfSavcNXry/eu8aHVFei6CD3Sw+VGX5alea1i9pgPHW0mbu6Xj0uBh7gA==
+  /eris/0.13.1:
+    dependencies:
+      ws: 7.3.0
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    optionalDependencies:
+      opusscript: 0.0.7
+      tweetnacl: 1.0.3
+    resolution:
+      integrity: sha512-c/059ie4W/NfPufFCsEFdgbvEVjEpcttAZijQ33P+3EemCMUfuehp1qFq1WcrAHYU+y0lCOqQDw2YdkGjgYdUQ==
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -1067,7 +1079,7 @@ packages:
       integrity: sha1-juqz5U+laSD+Fro493+iGqzC104=
   /parse5/3.0.3:
     dependencies:
-      '@types/node': 14.0.4
+      '@types/node': 14.0.5
     dev: false
     resolution:
       integrity: sha512-rgO9Zg5LLLkfJF9E6CCmXlSE4UVceloys8JrFqCcHloC3usd/kJCyPDwH2SOlzix2j3xaP9sUX3e8+kvkuleAA==
@@ -1188,7 +1200,7 @@ packages:
   /request/2.88.2:
     dependencies:
       aws-sign2: 0.7.0
-      aws4: 1.9.1
+      aws4: 1.10.0
       caseless: 0.12.0
       combined-stream: 1.0.8
       extend: 3.0.2
@@ -1485,6 +1497,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-GIyAXC2cB7LjvpgMt9EKS2ldqr0MTrORaleiOno6TweZ6r3TKtoFQWay/2PceJ3RuBasOHzXNn5Lrw1X0bEjqA==
+  /ws/7.3.0:
+    dev: false
+    engines:
+      node: '>=8.3.0'
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    resolution:
+      integrity: sha512-iFtXzngZVXPGgpTlP1rBqsUK82p9tKqsWRPg5L56egiljujJT3vGAYnHANvFxBieXrTFavhzhxW52jnaWV+w2w==
   /xml2js/0.2.8:
     dependencies:
       sax: 0.5.8
@@ -1520,6 +1541,7 @@ specifiers:
   '@discordjs/opus': ^0.3.2
   dblapi.js: ^2.4.0
   discord.js: ^11.5.1
+  eris: ^0.13.1
   express: ^4.17.1
   ffmpeg-static: ^4.2.1
   fs: ^0.0.2
