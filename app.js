@@ -79,9 +79,12 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
 //LEVELS
-  if(message.content = 50) {
-    message.channel.send("Wow, you can really say something long. Welcome to level 1!")
-    message.delete(1)
+  if(message.guild.roles.find(role => role.name === "Level 1")) {
+     
+  }
+  if(message.content =~ 50) {
+    message.channel.send("Wow, you are really finding the Level 1 institute. Welcome to level 1!")
+    message.delete(message.channel)
     var role = message.guild.roles.find(role => role.name === "Level 1");
     message.member.addRole(role);
   }
