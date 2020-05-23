@@ -225,16 +225,20 @@ return true
     if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
+  //PREVENT p!say
+      if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
+        message.channel.send("I am sorry, I cannot repeat p! say.")
+    }
   
   //STATS COMMAND (episode 4)
-  if(message.content.startsWith(`${prefix}stats`)) {
+  if(message.content.startsWith(`${prefix}stats`))
     
     var mcount = client.users.size
     var scount = client.guilds.size
     var tcount = client.channels.filter(c => c.type === 'text').size
     var vcount = client.channels.filter(c => c.type === 'voice').size
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
-  }
+  })
 
   //COINFLIP COMMAND (episode 5)
 if(message.content.startsWith(`${prefix}coinflip`)) {
@@ -249,18 +253,6 @@ var choices = [
   message.channel.send(`You got **${output}!**`)
   
 }
-
-  //DIE COMMAND / RESTART COMMAND (episode 7)
-  if(message.content.startsWith(`${prefix}die`)) {
-  let devs = ['711439928239718422','665651832118313007','339177677326123018']
-  
-  if(!devs.includes(message.author.id)) {
-return true
-} else {
-process.exit()
-}
-  
-  }
   
   //TESTING COMMAND (episode 7)
     if(message.content.startsWith(`${prefix}beep`)) {
@@ -270,7 +262,7 @@ process.exit()
   //SLOWMODE COMMAND (episode 8)
    if(message.content.startsWith(`${prefix}slowmode`)) {
     var time = message.content.split(' ').slice(1).join(' ')
-    if(!time) return message.reply('Please enter a time in seconds!')
+    if(!time) message.reply('Please enter a time in seconds!')
    message.channel.setRateLimitPerUser(time)
      message.channel.send('Set the slowmode!')
   }
@@ -312,4 +304,4 @@ message.channel.send(`${subc} is how many subs that channel has!`)
   }
 
 
-})
+)
