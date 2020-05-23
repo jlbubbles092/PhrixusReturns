@@ -225,10 +225,6 @@ return true
     if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
-  //PREVENT p!say
-      if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
-        message.channel.send("I am sorry, I cannot repeat p! say.")
-    }
   
   //STATS COMMAND (episode 4)
   if(message.content.startsWith(`${prefix}stats`))
@@ -238,7 +234,7 @@ return true
     var tcount = client.channels.filter(c => c.type === 'text').size
     var vcount = client.channels.filter(c => c.type === 'voice').size
     message.reply(`${client.user.username} is on ${scount} servers with ${mcount} members, chatting on ${tcount} text channels, with ${vcount} voice channels!`)
-  })
+  }
 
   //COINFLIP COMMAND (episode 5)
 if(message.content.startsWith(`${prefix}coinflip`)) {
@@ -304,4 +300,4 @@ message.channel.send(`${subc} is how many subs that channel has!`)
   }
 
 
-)
+})
