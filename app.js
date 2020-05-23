@@ -56,6 +56,22 @@ console.log('The bot has started!')
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
 });
 
+if(nxtlvl <= xp[message.author.id].xp) {
+  xp[message.author.id].level = curlvl + 1;
+
+  // Check if the user's level is 5.
+  if (xp[message.author.id].level === 5) {
+    // Retrieve the desired role. Uncomment whichever line you need, as described.
+    // const role = message.guild.roles.get('idHere');
+    // const role = message.guild.roles.find(role => role.name === 'Level 5');
+
+    message.member.addRole(role) // Or simply use the role ID directly.
+      .catch(console.error);     // Make sure to catch any rejected promises.
+  }
+
+  // Continue with your level-up embed.
+}
+
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
