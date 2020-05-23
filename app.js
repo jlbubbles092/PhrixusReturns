@@ -316,7 +316,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!serverInfo\np!tempmute\np!roleRemove\np!warnLevel\np!roleAdd\np!botinfo\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
+    message.channel.send('The commands are:\np!warn\np!serverInfo\np!tempmute\np!roleRemove\np!warnLevel\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
