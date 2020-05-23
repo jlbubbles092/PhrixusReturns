@@ -4,7 +4,7 @@ const http = require('http');
 
 const app = express();
 const server = http.createServer(app);
-const dbl = new DBL('NzExNjI5OTM5ODE1ODc0NjEy.Xsk22A.fhTM115lVj8SSMQy1UIXi3FMstk', { webhookAuth: 'BRkmDp-GixjDRNQV4XZl4BObnIwGa1G_ipNKYpdRJOiGBaIWdTaVpw63CznAFO1WnAqH', webhookServer: 713559957391278151 });
+const dbl = new DBL('NzExNjI5OTM5ODE1ODc0NjEy.Xsk22A.fhTM115lVj8SSMQy1UIXi3FMstk', { webhookAuth: '713559957391278151', webhookServer: 711559158603972740 });
 
 dbl.webhook.on('ready', hook => {
   console.log(`Webhook running with path ${hook.path}`);
