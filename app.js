@@ -1,3 +1,60 @@
+bot.on("message", async message => {
+    let xpAdd = Math.floor(Math.random() * 7) + 8;
+
+    if(!xp[message.author.id]) {
+        xp[message.author.id] = {
+            xp: 0,
+            level: 1
+        }
+    }
+    if(xp[message.author.id].level[5]) //idk if im doing this right, I want it so if level reaches a certain number, it will give out a role
+    {
+        console.log("skrt");
+    }
+    let curxp = xp[message.author.id].xp;
+    let curlvl = xp[message.author.id].level;
+    let nxtlvl = xp[message.author.id].level * 300;
+    let rankuplvl = xp[message.author.id].xp * 7;
+    xp[message.author.id].xp = curxp + xpAdd;
+
+    if(nxtlvl <= xp[message.author.id].xp) {
+        xp[message.author.id].level = curlvl + 1;
+
+        const lvlUp = new Discord.RichEmbed()
+            .setTitle("You leveled up!")
+            .setColor("#FFC0CB")
+            .addField("NEW LEVEL", curlvl + 1);
+
+        message.channel.send(lvlUp);
+    }
+    fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+        if(err) console.log(error)
+    });
+
+    if(message.content.startsWith(prefix + "level")) {
+        message.channel.bulkDelete(1)
+        if(!xp[message.author.id]){
+            xp[message.author.id] = {
+                xp: 0,
+                level: 1
+            };
+        }
+    let curxp = xp[message.author.id].xp;
+    let curlvl = xp[message.author.id].level;
+    let nxtlvl = curlvl * 300;
+    let difference = nxtlvl - curxp;
+
+    const lvlEmbed = new Discord.RichEmbed()
+        .setAuthor(message.author.username)
+        .setColor("#FFC0CB")
+        .addField("XP", curxp, true)
+        .addField("Level", curlvl, true)
+        .setFooter(`${difference} XP  until next rank!`, message.author.displayAvatarURL);
+    message.channel.send(lvlEmbed)
+    }
+});
+
+// ---------------------------------Level system
 const DBL = require('dblapi.js');
 const express = require('express');
 const http = require('http');
