@@ -83,6 +83,51 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
+//GiveRole
+  const Discord = require("discord.js");
+
+ module.exports.run = async (bot, message, args) => {
+
+   //!addrole @andrew Dog Person
+   if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("Sorry pal, you can't do that.");
+   let rMember = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]);
+   if(!rMember) return message.reply("Couldn't find that user, yo.");
+   let role = args.join(" ").slice(22);
+   if(!role) return message.reply("Specify a role!");
+   let gRole = message.guild.roles.find(`name`, role);
+   if(!gRole) return message.reply("Couldn't find that role.");
+
+   if(rMember.roles.has(gRole.id)) return message.reply("They already have that role.");
+   await(rMember.addRole(gRole.id));
+
+   try{
+     await rMember.send(`Congrats, you have been given the role ${gRole.name}`)
+   }catch(e){
+     console.log(e.stack);
+     message.channel.send(`Congrats to <@${rMember.id}>, they have been given the role ${gRole.name}. We tried to DM them, but their DMs are locked.`)
+   }
+ }
+
+ module.exports.help = {
+   name: "addrole"
+ }
+  //BotInfo
+ module.exports.run = async (bot, message, args) => {
+     let bicon = bot.user.displayAvatarURL;
+     let botembed = new Discord.RichEmbed()
+     .setDescription("Bot Information")
+     .setColor("#15f153")
+     .setThumbnail(bicon)
+     .addField("Bot Name", bot.user.username)
+     .addField("Created On", bot.user.createdAt);
+
+     message.channel.send(botembed);
+ }
+
+ module.exports.help = {
+   name:"botinfo"
+ }
+  //RemoveRole
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
     message.channel.send('The commands are:\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
