@@ -96,7 +96,7 @@ message.delete()
 
         message.channel.send(lvlUp);
     }
-    const fs = process
+    const fs = server
     fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
         if(err) return console.log(err)
     });
