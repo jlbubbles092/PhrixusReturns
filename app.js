@@ -186,14 +186,14 @@ if (message.content.startsWith(`${prefix}kick`)) {
 }
   //SCHOOL COMMAND
 if(message.content.startsWith(`${prefix}school`)) {
-  let owner = ['711439928239718422']
+  let owner = ['711439928239718422','432340835074572289']
   
   if(!owner.includes(message.author.id)) {
 return true
 } else {
   client.user.setActivity('the owner do his homework.',{ type: "WATCHING"})
   }
-  message.channel.send("Jose is doing homework.")
+  message.channel.send("Test subject.")
 }
   //UNSCHOOL COMMAND
 if(message.content.startsWith(`${prefix}unschool`)) {
