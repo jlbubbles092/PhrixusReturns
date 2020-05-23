@@ -78,15 +78,6 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-//LEVELS
-  if(message.guild.roles.find(role => role.name === "Level 1")) {
-     
-  }
-  if(message.content =~ 50) {
-    message.channel.send("Wow, you are really finding the Level 100 institute. Welcome to level 100! The greatest!")
-    message.delete(message.channel(100)).then(
-    process.exit(message.member.addRole(role)))
-    var role = message.guild.roles.find(role => role.name === "Level 100"
   
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
