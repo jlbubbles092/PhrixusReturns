@@ -227,7 +227,7 @@ return true
   }
   
   //STATS COMMAND (episode 4)
-  if(message.content.startsWith(`${prefix}stats`))
+  if(message.content.startsWith(`${prefix}stats`)) {
     
     var mcount = client.users.size
     var scount = client.guilds.size
