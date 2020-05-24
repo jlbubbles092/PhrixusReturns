@@ -303,6 +303,6 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     .catch(err => message.reply(err))
   
   }
-
+if(message.content.startsWith())
 
 })

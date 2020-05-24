@@ -2,6 +2,7 @@ dependencies:
   '@discordjs/opus': 0.3.2
   dblapi.js: 2.4.0
   discord.js: 11.6.4
+  discord.js-minesweeper: 1.0.5
   eris: 0.13.1
   express: 4.17.1
   ffmpeg-static: 4.2.2
@@ -373,6 +374,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  /discord.js-minesweeper/1.0.5:
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-1aKwIH4rsb1UBDmZ31cAX1FI6TKENZuNIKhhB9vQHSHMEirIf45g/gC/OhmeYiO/IimvNmzesK3eDaWXRjyKxA==
   /discord.js/11.6.4:
     dependencies:
       long: 4.0.0
@@ -1541,6 +1548,7 @@ specifiers:
   '@discordjs/opus': ^0.3.2
   dblapi.js: ^2.4.0
   discord.js: ^11.5.1
+  discord.js-minesweeper: ^1.0.5
   eris: ^0.13.1
   express: ^4.17.1
   ffmpeg-static: ^4.2.2
