@@ -303,6 +303,14 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     .catch(err => message.reply(err))
   
   }
-if(message.content.startsWith())
-
+  //Mines command
+if(message.content.startsWith(`${prefix}mine`)) {
+  const Minesweeper = require('discord.js-minesweeper');
+  
+  const minesweeper = new Minesweeper({
+    returnType: 'emoji'
+  })
+  var mines = minesweeper.Start()
+  message.channel.send(mines)
+}
 })
