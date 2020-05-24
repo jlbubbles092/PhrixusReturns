@@ -4,7 +4,7 @@
   "//3": "updating this file will download and update your packages",
   "name": "pepper-paint-layer",
   "version": "1.0.3",
-o "description": "Phrixus Code.",
+  "description": "Phrixus Code.",
   "scripts": {
     "start": "node app.js"
   },
@@ -36,4 +36,3 @@ o "description": "Phrixus Code.",
     "express"
   ]
 }
-p

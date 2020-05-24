@@ -85,7 +85,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!')
+    message.channel.send('The commands are:\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -304,13 +304,16 @@ message.channel.send(`${subc} is how many subs that channel has!`)
   
   }
   //Mines command
-if(message.content.startsWith(`${prefix}mine`)) {
+  if(message.content.startsWith(`${prefix}mine`)) {
   const Minesweeper = require('discord.js-minesweeper');
+    
+    const minesweeper = new Minesweeper({
+      returnType: 'emoji'
+    });
+    var mines = minesweeper.start()
+    message.channel.send(mines)
   
-  const minesweeper = new Minesweeper({
-    returnType: 'emoji'
-  })
-  var mines = minesweeper.Start()
-  message.channel.send(mines)
-}
+  
+  }
+  
 })
