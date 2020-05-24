@@ -290,7 +290,7 @@ return
 message.channel.send(`${subc} is how many subs that channel has!`)
       }) }
   
-  
+  //Lyrics
   if(message.content.startsWith(`${prefix}lyrics`)) {
     const genius = require("genius-lyrics")
     const G = new genius.Client(process.env.GENIUS)
