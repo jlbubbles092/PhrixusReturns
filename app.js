@@ -56,20 +56,47 @@ console.log('The bot has started!')
   var scount1 = client.guilds.size
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
 });
-//----------------------------/-----/--
-exports.run = async (client, message, args, ops) => {
-  if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.");
-  if(message.guild.me.voiceChannel) return message.channel.send("Sorry, I am already connected, disconnect me for music!");
-  if(!args[0]) return message.channel.send("Can you please input a url to your song in the command?");
-  let validate = await ytdl.validateURL(args[0]);
-  if(!validate) return message.channel.send(`Sorry, input a **valid** URL on the command line, please.`);
-  let info = await ytdl.getInfo(args[0]);
-  let connection = await message.member.voiceChannel.join();
-  let dispatcher = await connection.play(ytdl(args[0], {filter: 'audioonly' }));
-  message.channel.send(`Now playing: ${info.title}`);
-}
-//---------------------------/-----/--
 client.on ('message', async message => {
+  
+  if (!message.guild) return;
+
+  if (message.content.startsWith(`${prefix}play`)) {
+    // Only try to join the sender's voice channel if they are in one themselves
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+    } else {
+      message.reply('You need to join a voice channel first!');
+    }
+  }
+});
+const dispatcher = connection.play('/home/discord/audio.mp3');
+dispatcher.pause();
+dispatcher.resume();
+
+dispatcher.setVolume(0.5); // half the volume
+
+dispatcher.on('finish', () => {
+  console.log('Finished playing!');
+});
+const dispatcher1 = connection.play('/home/discord/audio.mp3', {
+  volume: 0.5,
+});
+
+dispatcher.destroy(); // end the stream
+const broadcast = client.voice.createBroadcast();
+
+broadcast.on('subscribe', dispatcher => {
+  console.log('New broadcast subscriber!');
+});
+
+broadcast.on('unsubscribe', dispatcher => {
+  console.log('Channel unsubscribed from broadcast :(');
+});
+
+const dispatcher2 = broadcast.play('./audio.mp3');
+
+connection.play(broadcast);
+//------------------------------------------------------
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
@@ -91,7 +118,7 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-  
+
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
