@@ -80,7 +80,7 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-//PLAY, SKIP, STOP
+//PLAY
   switch (args[0]) {
   case 'play':
       
@@ -129,18 +129,18 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       
     break;
-      
+      //skip
   case 'skip':
     var server = servers[message.guild.id];
     if(server.dispatcher) server.dispatcher.end();
     message.channel.send("Skipping to the next song!")
     break;
-      
+      //stop
   case 'stop':
     var server = servers[message.guild.id];
     if(message.guild.voiceConnection){
       for(var i = server.queue.length -1; i >=0; i--){
-        server.queue.splice(i, 1);
+        server.queue.slice(i, 1);
     }
     
     server.dispatcher.end();
