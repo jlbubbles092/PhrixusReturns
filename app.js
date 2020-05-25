@@ -57,46 +57,6 @@ console.log('The bot has started!')
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
 });
 client.on ('message', async message => {
-  
-  if (!message.guild) return;
-
-  if (message.content.startsWith(`${prefix}play`)) {
-    // Only try to join the sender's voice channel if they are in one themselves
-    if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-    } else {
-      message.reply('You need to join a voice channel first!');
-    }
-  }
-});
-const dispatcher = connection.play('/home/discord/audio.mp3');
-dispatcher.pause();
-dispatcher.resume();
-
-dispatcher.setVolume(0.5); // half the volume
-
-dispatcher.on('finish', () => {
-  console.log('Finished playing!');
-});
-const dispatcher1 = connection.play('/home/discord/audio.mp3', {
-  volume: 0.5,
-});
-
-dispatcher.destroy(); // end the stream
-const broadcast = client.voice.createBroadcast();
-
-broadcast.on('subscribe', dispatcher => {
-  console.log('New broadcast subscriber!');
-});
-
-broadcast.on('unsubscribe', dispatcher => {
-  console.log('Channel unsubscribed from broadcast :(');
-});
-
-const dispatcher2 = broadcast.play('./audio.mp3');
-
-connection.play(broadcast);
-//------------------------------------------------------
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
