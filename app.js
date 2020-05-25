@@ -95,7 +95,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
           if(server.queue[0]){
             play(connection, message);
        } else {
-            connection
+            connection.disconnect();
           }
         })
         
