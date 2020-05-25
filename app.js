@@ -83,8 +83,10 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 //PLAY
   switch (args[0]) {
   case 'play':
+      
       function play(connection, message){
         var server = servers[message.guild.id];
+        
         server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}))
         
         server.queue.shift();
@@ -96,7 +98,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
             connection.disconnect();
           }
         });
-  
+        
         
       }
       
@@ -129,7 +131,6 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
     break;
       //skip
   case 'skip':
-    const connection = await message.member.voiceChannel.join();
     var server = servers[message.guild.id];
     if(server.dispatcher) server.dispatcher.end();
     message.channel.send("Skipping to the next song!")
@@ -141,8 +142,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       for(var i = server.queue.length -1; i >=0; i--){
         server.queue.slice(i, 1);
     }
-    const dispatcher = connection.play('/home/discord/audio.mp3');
-    const connection = await message.member.voice.channel.join();
+    
     server.dispatcher.end();
     message.channel.send("Ending the queue, leaving the voice channel.")
     console.log('Stopped all music process.')
