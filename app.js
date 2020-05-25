@@ -84,8 +84,10 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   switch (args[0]) {
   case 'play':
       
-      function play(connection, message){
+      function play(message){
         var server = servers[message.guild.id];
+        
+        const connection = await message.member.voiceChannel.join();
         
         let dispatcher = connection.play('./audio.mp3');
         
