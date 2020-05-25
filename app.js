@@ -58,8 +58,12 @@ console.log('The bot has started!')
 });
 //----------------------------/-----/--
 exports.run = async (client, message, args, ops) => {
-  if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.")
-  if(message.guild.me.voiceChannel) return message.channel.send("Sorry, I am already connected, disconnect me for music!")
+  if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.");
+  if(message.guild.me.voiceChannel) return message.channel.send("Sorry, I am already connected, disconnect me for music!");
+  if(!args[0]) return message.channel.send("Can you please input a url to your song in the command?");
+  let validate = await ytdl.validateURL(args[0]);
+  if(!validate) return message.channel.send(`Sorry, input a **valid** URL on the command line, please.`);
+  
 }
 //---------------------------/-----/--
 client.on ('message', async message => {
