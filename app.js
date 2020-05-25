@@ -57,17 +57,6 @@ console.log('The bot has started!')
 });
 
 client.on ('message', async message => {
-  if (!message.guild) return;
-
-  if (message.content === '/join') {
-    // Only try to join the sender's voice channel if they are in one themselves
-    if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-    } else {
-      message.reply('You need to join a voice channel first!');
-    }
-  }
-});
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
@@ -323,6 +312,7 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     });
     var mines = minesweeper.start()
     message.channel.send(mines)
+  
   
   }
   
