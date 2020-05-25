@@ -123,6 +123,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
         play(connection, message);
+        message.channel.send(`Playing ${message}`)
       })
       
       
