@@ -1,6 +1,7 @@
 const DBL = require('dblapi.js');
 const express = require('express');
 const http = require('http');
+const ytdl = require('ytdl-core');
 
 const app = express();
 const server = http.createServer(app);
@@ -55,7 +56,12 @@ console.log('The bot has started!')
   var scount1 = client.guilds.size
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
 });
-
+//----------------------------/-----/--
+exports.run = async (client, message, args, ops) => {
+  if(!message.member.voiceChannel) return message.channel.send("Please connect to a voice channel.")
+  if(message.guild.me.voiceChannel) return message.channel.send("Sorry, I am already connected, disconnect me for music!")
+}
+//---------------------------/-----/--
 client.on ('message', async message => {
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
