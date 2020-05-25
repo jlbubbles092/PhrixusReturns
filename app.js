@@ -121,10 +121,10 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       server.queue.push(args[1]);
       
-      if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+      if(!message.guild.voice.connection) message.member.voice.channel.join().then(function(connection){
         play(connection, message);
         message.channel.send("Playing that song.")
-        client.user.setActivity("that song.",{ type: "PLAYING"})
+        client.user.setActivity("a song.",{ type: "PLAYING"})
       })
       
       
@@ -138,7 +138,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       //stop
   case 'stop':
     var server = servers[message.guild.id];
-    if(message.guild.voiceConnection){
+    if(message.guild.voice.connection){
       for(var i = server.queue.length -1; i >=0; i--){
         server.queue.slice(i, 1);
     }
@@ -148,7 +148,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
     console.log('Stopped all music process.')
   }
       
-  if(message.guild.connection) message.guild.voiceConnection.disconnect();
+  if(message.guild.connection) message.guild.voice.connection.disconnect();
 break;
       
   }
