@@ -96,7 +96,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
             connection.disconnect();
           }
         });
-        const dispatcher = connection.play(message)
+  
         
       }
       
