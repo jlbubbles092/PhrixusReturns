@@ -65,10 +65,11 @@ message.delete()
   message.member.send('That word is not allowed!')
   
 }
-  
+  const ytdl = require("ytdl-core");
 
   var prefix = 'p!'
   let args = message.content.substring(prefix.length).split(" ");
+  var servers = {};
 
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
@@ -92,6 +93,11 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
         return;
       }
       
+      if(!servers[message.guild.id]) servers[message.guild.id] = {
+        queue: []
+      }
+      
+      var server = servers[message.guild.id]
       
       
     break;
