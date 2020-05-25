@@ -80,10 +80,21 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
 //PLAY
-  if(message.content.startsWith(`${prefix}play`)) {
+  switch (args[0]) {
+  case 'play':
     if(!args[1]){
-      message.channel.send("You need to provide a link!")
+      message.channel.send("You need to provide a link!");
+    return;
     }
+      
+      if(!message.member.voiceChannel){
+        message.channel.send("You need to join a voice channel to play music!");
+        return;
+      }
+      
+      
+      
+    break;
   }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
