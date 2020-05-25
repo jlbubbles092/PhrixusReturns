@@ -97,7 +97,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
        } else {
             connection.disconnect();
           }
-        })
+        });
         
         
       }
