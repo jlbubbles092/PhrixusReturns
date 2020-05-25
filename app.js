@@ -108,7 +108,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
     return;
     }
       
-      if(!message.member.voiceChannel){
+      if(!message.member.voice.channel){
         message.channel.send("You need to join a voice channel to play music!");
         return;
       }
