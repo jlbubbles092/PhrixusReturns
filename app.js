@@ -84,9 +84,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   switch (args[0]) {
   case 'play':
       function play(connection, message){
-        const dispatcher = connection.play('/home/discord/audio.mp3');
         var server = servers[message.guild.id];
-        
         server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}))
         
         server.queue.shift();
@@ -98,7 +96,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
             connection.disconnect();
           }
         });
-        
+        const dispatcher = connection.play(message)
         
       }
       
