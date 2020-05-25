@@ -65,11 +65,9 @@ message.delete()
   message.member.send('That word is not allowed!')
   
 }
-  const ytdl = require("ytdl-core");
+  
 
   var prefix = 'p!'
-  let args = message.content.substring(prefix.length).split(" ");
-  var servers = {};
 
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
@@ -80,89 +78,14 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-//PLAY
-  switch (args[0]) {
-  case 'play':
-      
-      function play(message){
-        var server = servers[message.guild.id];
-        
-        const connection = await message.member.voiceChannel.join();
-        
-        let dispatcher = connection.play('./audio.mp3');
-        
-        server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}))
-        
-        server.queue.shift();
-        
-        server.dispatcher.on("end", function(){
-          if(server.queue[0]){
-            play(connection, message);
-       } else {
-            connection.disconnect();
-          }
-        });
-        
-        
-      }
-      
-      
-    if(!args[1]){
-      message.channel.send("You need to provide a link!");
-    return;
-    }
-      
-      if(!message.member.voiceChannel){
-        message.channel.send("You need to join a voice channel to play music!");
-        return;
-      }
-      
-      if(!servers[message.guild.id]) servers[message.guild.id] = {
-        queue: []
-      }
-      
-      var server = servers[message.guild.id]
-      
-      server.queue.push(args[1]);
-      
-      if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
-        play(connection, message);
-        message.channel.send("Playing that song.")
-        client.user.setActivity("a song.",{ type: "PLAYING"})
-      })
-      
-      
-    break;
-      //skip
-  case 'skip':
-    var server = servers[message.guild.id];
-    if(server.dispatcher) server.dispatcher.end();
-    message.channel.send("Skipping to the next song!")
-    break;
-      //stop
-  case 'stop':
-    var server = servers[message.guild.id];
-    if(message.guild.voiceConnection){
-      for(var i = server.queue.length -1; i >=0; i--){
-        server.queue.slice(i, 1);
-    }
-    
-    server.dispatcher.end();
-    message.channel.send("Ending the queue, leaving the voice channel.")
-    console.log('Stopped all music process.')
-  }
-      
-  if(message.guild.connection) message.guild.voiceConnection.disconnect();
-break;
-      
-  }
+  
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!play\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
+    message.channel.send('The commands are:\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -302,17 +225,12 @@ return true
     if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
-  //DIE
-  if(message.content.startsWith(`${prefix}die`)) {
-  let devs = ['711439928239718422','339177677326123018','432340835074572289','240649282074574849','653128410574618676']
+  //PREVENT p!say
+      if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
+        process.repeat()
+        message.channel.send("I am sorry, I cannot repeat p! say.")
+      }
   
-  if(!devs.includes(message.author.id)) {
-return true
-} else {
-process.exit()
-}
-  
-  }
   //STATS COMMAND (episode 4)
   if(message.content.startsWith(`${prefix}stats`)) {
     
