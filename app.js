@@ -83,6 +83,16 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 //PLAY
   switch (args[0]) {
   case 'play':
+      
+      function play(connection, message){
+        var server = servers[message.guild.id];
+        
+        server.dispatcher = connection.playStream(ytdl(server.queue))
+        
+        
+      }
+      
+      
     if(!args[1]){
       message.channel.send("You need to provide a link!");
     return;
@@ -98,6 +108,10 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       }
       
       var server = servers[message.guild.id]
+      
+      if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
+        play(connection, message);
+      })
       
       
     break;
