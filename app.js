@@ -123,19 +123,22 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
         play(connection, message);
-        message.channel.send(`Playing ${message}`)
+        message.channel.send("Playing that song.")
+        client.user.setActivity("that song.",{ type: "PLAYING"})
       })
       
       
     break;
   }
+  //SKIP
+
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
+    message.channel.send('The commands are:\np!play\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
