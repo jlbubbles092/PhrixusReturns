@@ -149,6 +149,9 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
       
   if(message.guild.connection) message.guild.voiceConnection.disconnect();
+break;
+      
+  }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
@@ -295,12 +298,17 @@ return true
     if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
-  //PREVENT p!say
-      if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
-        process.repeat()
-        message.channel.send("I am sorry, I cannot repeat p! say.")
-      }
+  //DIE
+  if(message.content.startsWith(`${prefix}die`)) {
+  let devs = ['711439928239718422','339177677326123018','432340835074572289','240649282074574849','653128410574618676']
   
+  if(!devs.includes(message.author.id)) {
+return true
+} else {
+process.exit()
+}
+  
+  }
   //STATS COMMAND (episode 4)
   if(message.content.startsWith(`${prefix}stats`)) {
     
