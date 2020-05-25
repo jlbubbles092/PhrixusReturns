@@ -119,6 +119,8 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       var server = servers[message.guild.id]
       
+      server.queue.push(args[1]);
+      
       if(!message.guild.voiceConnection) message.member.voiceChannel.join().then(function(connection){
         play(connection, message);
       })
