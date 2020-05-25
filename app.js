@@ -87,6 +87,8 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       function play(connection, message){
         var server = servers[message.guild.id];
         
+        let dispatcher = connection.play('./audio.mp3');
+        
         server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}))
         
         server.queue.shift();
