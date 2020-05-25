@@ -123,27 +123,31 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
         play(connection, message);
         message.channel.send("Playing that song.")
         client.user.setActivity("a song.",{ type: "PLAYING"})
-      
       })
-break;
+      
+      
+    break;
+      //skip
   case 'skip':
     const connection = await message.member.voiceChannel.join();
     var server = servers[message.guild.id];
     if(server.dispatcher) server.dispatcher.end();
     message.channel.send("Skipping to the next song!")
+    break;
       //stop
-  }
   case 'stop':
     var server = servers[message.guild.id];
     if(message.guild.voiceConnection){
       for(var i = server.queue.length -1; i >=0; i--){
         server.queue.slice(i, 1);
+    }
     const dispatcher = connection.play('/home/discord/audio.mp3');
     const connection = await message.member.voice.channel.join();
     server.dispatcher.end();
     message.channel.send("Ending the queue, leaving the voice channel.")
     console.log('Stopped all music process.')
-  
+  }
+      
   if(message.guild.connection) message.guild.voiceConnection.disconnect();
 break;
       
