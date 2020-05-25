@@ -80,7 +80,7 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-//PLAY
+//PLAY, SKIP, STOP
   switch (args[0]) {
   case 'play':
       
@@ -129,9 +129,26 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
       
       
     break;
+      
+  case 'skip':
+    var server = servers[message.guild.id];
+    if(server.dispatcher) server.dispatcher.end();
+    message.channel.send("Skipping to the next song!")
+    break;
+      
+  case 'stop':
+    var server = servers[message.guild.id];
+    if(message.guild.voiceConnection){
+      for(var i = server.queue.length -1; i >=0; i--){
+        server.queue.splice(i, 1);
+    }
+    
+    server.dispatcher.end();
+    message.channel.send("Ending the queue, leaving the voice channel.")
+    console.log('Stopped all music process.')
   }
-  //SKIP
-
+      
+  if(message.guild.connection) message.guild.voiceConnection.disconnect();
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
