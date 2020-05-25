@@ -313,7 +313,6 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     var mines = minesweeper.start()
     message.channel.send(mines)
   
-  
   }
   
 })
