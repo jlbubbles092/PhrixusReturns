@@ -68,6 +68,7 @@ message.delete()
   
 
   var prefix = 'p!'
+  let args = message.content.substring(prefix.length).split(" ");
 
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
@@ -78,7 +79,12 @@ const end = Date.now()
 message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
 })
   }
-  
+//PLAY
+  if(message.content.startsWith(`${prefix}play`)) {
+    if(!args[1]){
+      message.channel.send("You need to provide a link!")
+    }
+  }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
