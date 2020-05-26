@@ -58,27 +58,46 @@ console.log('The bot has started!')
 });
 client.on ('message', async message => {
   //botinfo
-    if(message.content.startsWith(`${prefix}botinfo`)) {
-  const embed = new Discord.MessageEmbed()
-	.setColor('#0099ff')
-	.setTitle('Bot Info')
-	.setURL('https://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
-	.setAuthor('jlbubbles0920#0001', 'https://cdn.discordapp.com/avatars/711439928239718422/a_cbe4185dc21a064c6ed4857686156075.gif')
-	.setDescription('Bot info for me, Phrixus!')
-	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
-	.addFields(
-		{ name: 'Owner', value: 'jlbubbles0920#0001' },
-		{ name: '\u200B', value: '\u200B' },
-		{ name: 'About me, the bot.', value: 'I am half source code and half self-made, I am powered by Glitch and UpTimeRobot.', inline: true },
-		{ name: 'Dependencies:', value: '@discordjs/opus, dblapi.js, discord.js, discord.js-minesweeper, eris, express, ffmpeg, ffmpeg-binaries, ffmpeg-static, fs, genius-lyrics, opusscript, request, youtube-search, ytdl-core.', inline: true },
-	)
-	.addField('Support Server:', 'https://discord.gg/4xQD3BY', true)
-	.setImage('https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg')
+    if(message.content.startsWith('p!botinfo')) {
+  const embed = {
+	color: 0x0099ff,
+	title: 'Bot Info',
+	url: 'https://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot',
+	author: {
+    name: 'jlbubbles0920#0001',
+   iconurl: 'https://cdn.discordapp.com/avatars/711439928239718422/a_cbe4185dc21a064c6ed4857686156075.gif',
+  },
+	description: 'Bot info for me, Phrixus!',
+	thumbnail: {
+    url: 'https://i.imgur.com/wSTFkRM.png'
+  },
+	fields: [
+    {
+ name: 'Owner',
+value: 'jlbubbles0920#0001',
+    },
+		{ 
+      name: '\u200B', 
+      value: '\u200B',
+    },
+		{ 
+      name: 'About me, the bot.', 
+      value: 'I am half source code and half self-made, I am powered by Glitch and UpTimeRobot.', inline: true 
+    },
+    
+		{
+      name: 'Dependencies:',
+      value: '@discordjs/opus, dblapi.js, discord.js, discord.js-minesweeper, eris, express, ffmpeg, ffmpeg-binaries, ffmpeg-static, fs, genius-lyrics, opusscript, request, youtube-search, ytdl-core.', inline: true
+    },
+    ],
+	
+	image: {'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg'
+          
 	.setTimestamp()
 	.setFooter('Giveaways!', 'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg');
 
 message.channel.send(embed);
-  }
+  }}
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
