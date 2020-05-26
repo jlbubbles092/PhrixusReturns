@@ -222,9 +222,11 @@ return true
   //Avatar
   if(message.content.startsWith(`${prefix}avatar`)) {
     var text1 = message.content.split(' ').slice(1).join(' ')
-    if(!text1) return message.reply('Whos avatar??? Hehe.')
-    var avatar = message.user.avatar
-  message.channel.send(avatar)
+    if(!text1) return message.channel.send('Whos avatar?')
+    var user = message.mentions.users.first();
+    var avatar = user.avatarURL
+    console.log(user);
+  message.channel.send(avatar);
   }
   //SAY COMMAND (episode 3)
   if(message.content.startsWith(`${prefix}say`)) {
