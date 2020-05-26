@@ -73,8 +73,8 @@ client.on ('message', async message => {
   },
 	fields: [
     {
- name: 'Owner',
-value: 'jlbubbles0920#0001',
+ name: 'Owner and Versions:',
+value: 'jlbubbles0920#0001\nDiscord.js Version: 11.5.1\nNode.js Version: 12.x',
     },
 		{ 
       name: '\u200B', 
