@@ -101,6 +101,8 @@ value: 'jlbubbles0920#0001',
   },
   };
     message.channel.send({ embed: embed });
+    var user = message.mentions.users.first();
+    console.log(user);
   }
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
@@ -130,7 +132,7 @@ message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
   }
 //HELP COMMAND
   if(message.content.startsWith(`${prefix}help`)) {
-    message.channel.send('The commands are:\np!avatar\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
+    message.channel.send('The commands are:\np!botinfo\np!avatar\np!mine\np!school {For owners only}\np!unschool {For owners only}\np!lyrics\np!invite\np!ping\np!credits\np!help\np!uptime\np!dm\np!say\np!stats\np!coinflip\np!die {For mods only}\np!beep\np!slowmode\np!subc\np!ban\np!kick\nThese are all the commands!\n> Powered by Glitch and using dblapi.js.')
   }
  //UPTIME COMMAND
 if(message.content.startsWith(`${prefix}uptime`)) {
@@ -279,12 +281,6 @@ return true
     if(!text) return message.reply('Please give me some text to say! :)')
    message.channel.send(text)
   }
-  //PREVENT p!say
-      if(message.content.startsWith(`${prefix}say ${prefix}say`)) { 
-        process.repeat()
-        message.channel.send("I am sorry, I cannot repeat p! say.")
-      }
-  
   //STATS COMMAND (episode 4)
   if(message.content.startsWith(`${prefix}stats`)) {
     
