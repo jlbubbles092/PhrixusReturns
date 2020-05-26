@@ -50,7 +50,7 @@ client.on("ready", () => {
     setInterval(() => {
         dbl.postStats(serverCount)
       var serverCount = client.guilds.size
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+        dbl.postStats(client.guilds.size, client.shards.id, client.shards.total);
     }, 1800000);
 console.log('The bot has started!')
   var scount1 = client.guilds.size
