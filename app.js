@@ -219,6 +219,13 @@ return true
     message.member.send('Hello fellow member of Giveaways!\nThis is a new world!')
   }
 
+  //Avatar
+  if(message.content.startsWith(`${prefix}avatar`)) {
+    var text1 = message.content.split(' ').slice(1).join(' ')
+    if(!text1) return message.reply('Whos avatar??? Hehe.')
+    var avatar = message.user.avatar
+  message.channel.send(avatar)
+  }
   //SAY COMMAND (episode 3)
   if(message.content.startsWith(`${prefix}say`)) {
     var text = message.content.split(' ').slice(1).join(' ')
