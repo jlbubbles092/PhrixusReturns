@@ -64,8 +64,8 @@ client.on ('message', async message => {
 	title: 'Bot Info',
 	url: 'https://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot',
 	author: {
-    name: 'jlbubbles0920#0001',
-   iconurl: 'https://cdn.discordapp.com/avatars/711439928239718422/a_cbe4185dc21a064c6ed4857686156075.gif',
+    name: 'Phrixus#9511',
+   iconurl: 'https://cdn.discordapp.com/avatars/711629939815874612/e4ad06302e571eda60436a306a559777.png?size=2048',
   },
 	description: 'Bot info for me, Phrixus!',
 	thumbnail: {
