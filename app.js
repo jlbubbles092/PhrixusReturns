@@ -232,21 +232,35 @@ return true
   if(message.content.startsWith(`${prefix}botInfo`)) {
     const embed = new Discord.MessageEmbed()
 	.setColor('#0099ff')
-	.setTitle('Some title')
-	.setURL('https://discord.js.org/')
-	.setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
-	.setDescription('Some description here')
+	.setTitle('Bot Info')
+	.setURL('https://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
+	.setAuthor('jlbubbles0920#0001', 'https://cdn.discordapp.com/avatars/711439928239718422/a_cbe4185dc21a064c6ed4857686156075.gif')
+	.setDescription('Bot info for me, Phrixus!')
 	.setThumbnail('https://i.imgur.com/wSTFkRM.png')
 	.addFields(
-		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: 'Owner', value: 'jlbubbles0920#0001' },
 		{ name: '\u200B', value: '\u200B' },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
-		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'About me, the bot.', value: 'I am half source code and half self-made, I am powered by Glitch and UpTimeRobot.', inline: true },
+		{ name: 'Dependencies:', value: '@discordjs/opus,
+    "dblapi.js": "^2.4.0",
+    "discord.js": "^11.5.1",
+    "discord.js-minesweeper": "^1.0.5",
+    "eris": "^0.13.1",
+    "express": "^4.17.1",
+    "ffmpeg
+    ffmpeg-binaries
+    ffmpeg-static
+    fs
+    genius-lyrics
+    opusscript
+    request
+    youtube-search
+    ytdl-core', inline: true },
 	)
 	.addField('Inline field title', 'Some value here', true)
-	.setImage('https://i.imgur.com/wSTFkRM.png')
+	.setImage('https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg')
 	.setTimestamp()
-	.setFooter('Giveaways!', 'https://i.imgur.com/wSTFkRM.png');
+	.setFooter('Giveaways!', 'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg');
 
 message.channel.send(embed);
   }
