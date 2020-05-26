@@ -91,13 +91,17 @@ value: 'jlbubbles0920#0001',
     },
     ],
 	
-	image: {'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg'
-          
-	.setTimestamp()
-	.setFooter('Giveaways!', 'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg');
-
-message.channel.send(embed);
-  }}
+	image: {
+   url: 'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg',
+  },
+	timestamp: new Date(),
+	footer:{
+    text: 'Giveaways!',
+    icon_url: 'https://thumbs.dreamstime.com/z/giveaway-logo-template-social-media-post-website-banner-give-away-text-red-label-gift-box-background-vector-137275763.jpg'
+  },
+  };
+    message.channel.send({ embed: embed });
+  }
   //SWEAR WORD FILTER (episode 12)
 const swearWords = ['swear1', 'swear2']
  if(swearWords.some(word => message.content.includes(word)) ) {
