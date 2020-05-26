@@ -272,12 +272,8 @@ return true
     if(!text1) return message.channel.send('Which avatar?')
     var user = message.mentions.users.first();
     var avatar = user.avatarURL
-    var bot = message.mentions.bots();
     console.log(user);
-    console.log(bot);
   message.channel.send(avatar);
-  } else {
-    message.channel.send(bot);
   }
   //SAY COMMAND (episode 3)
   if(message.content.startsWith(`${prefix}say`)) {
