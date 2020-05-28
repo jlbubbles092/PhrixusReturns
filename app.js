@@ -115,7 +115,8 @@ message.delete()
   
 
   var prefix = 'p!'
-
+//CoronaVirus
+  
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()
