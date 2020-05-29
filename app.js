@@ -125,8 +125,8 @@ if(message.content.startsWith(`${prefix}corona`)) {
   function fnum(num) {
   return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 message.reply(`That country has ${r.cases} cases.`)
+}})
 }
-})
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()
