@@ -119,24 +119,19 @@ message.delete()
   
 //CoronaVirus 
 if(message.content.startsWith(`${prefix}corona`)) {
-  const data = await api.all()
-  const coronaembed = {
-    color: 0x4A007E,
-    fields: [
-      {
-        name: 'Cases',
-        value: `There are this amount of cases: ${data.cases}`, inline: true
-      },
-      {
-        name: 'Deaths',
-        value: `There are this amount of deaths: ${data.deaths}`, inline: true
-      },
-      {
-        name: '',
-        value: ``
-      }
-    ],
-  }
+  const args = message.content.slice(prefix.length).split(/ +/);
+
+if(message.content.startsWith(`${prefix}corona`)) {
+ if (!args[0]) return message.reply('you need to enter a country name')
+    const url = `https://coronavirus-19-api.herokuapp.com/countryName`
+    request(url, function(err, response, body){
+        if(err) return message.reply("err")
+        body = JSON.parse(body)
+        message.reply(`Coronavirus cases for: + \*\*${body.cases}\*\*\ ` ,)
+    }
+
+
+,)}
 }
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
