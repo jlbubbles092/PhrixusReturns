@@ -3,6 +3,7 @@ const DBL = require('dblapi.js');
 const express = require('express');
 const http = require('http');
 const ytdl = require('ytdl-core');
+var fetch = require('node-fetch');
 
 const app = express();
 const server = http.createServer(app);
@@ -117,20 +118,15 @@ message.delete()
   var prefix = 'p!'
   
 //CoronaVirus 
-const args = message.content.slice(prefix.length).split(/ +/);
-const command = args.shift().toLowerCase();
-
 if(message.content.startsWith(`${prefix}corona`)) {
-    if (!args[0]) return message.reply('you need to enter a country name')
-    const url = `https://coronavirus-19-api.herokuapp.com/countries/${args[0]}`
-    request(url, function(err, response, body){
-        if(err) return message.reply("err")
-        body = JSON.parse(body)
-        message.reply(`Coronavirus cases for: + \*\*${body.cases}\*\*\ ` ,)
-    }
-
-
-,)}
+ fetch("https://coronavirus-19-api.herokuapp.com/countries/USA")
+  .then(r => r.json())
+  .then(r => {
+  function fnum(num) {
+  return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+message.reply(`That country has ${r.cases} cases.`)
+}
+})
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()
