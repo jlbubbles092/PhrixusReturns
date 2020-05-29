@@ -115,10 +115,22 @@ message.delete()
   
 
   var prefix = 'p!'
-  const api = require('covidapi')
   
 //CoronaVirus 
+const args = message.content.slice(prefix.length).split(/ +/);
+const command = args.shift().toLowerCase();
 
+if(message.content.startsWith(`${prefix}corona`)) {
+    if (!args[0]) return message.reply('you need to enter a country name')
+    const url = `https://coronavirus-19-api.herokuapp.com/countries/${args[0]}`
+    request(url, function(err, response, body){
+        if(err) return message.reply("err")
+        body = JSON.parse(body)
+        message.reply(`Coronavirus cases for: + \*\*${body.cases}\*\*\ ` ,)
+    }
+
+
+,)}
 //PING COMMAND (episode 1 / episode 6)
   if(message.content.startsWith(`${prefix}ping`)) {
 const start = Date.now()

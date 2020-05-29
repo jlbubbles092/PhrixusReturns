@@ -21,6 +21,7 @@
     "ffmpeg-static": "^4.2.2",
     "fs": "^0.0.2",
     "genius-lyrics": "^3.0.0",
+    "node-fetch": "^2.6.0",
     "opusscript": "0.0.7",
     "request": "^2.88.2",
     "youtube-search": "^1.1.4",
