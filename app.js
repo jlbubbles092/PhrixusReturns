@@ -4,7 +4,6 @@ const express = require('express');
 const http = require('http');
 const ytdl = require('ytdl-core');
 var fetch = require('node-fetch');
-const chaman = Discord.ennard
 
 const app = express();
 const server = http.createServer(app);
@@ -118,7 +117,7 @@ message.delete()
 
   var prefix = 'p!'
   
-//CoronaVirus 
+//AFK (coming soon)
 
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
