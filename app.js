@@ -121,11 +121,8 @@ message.delete()
   
 //SERVERS
 if(message.content.startsWith(`${prefix}servers`)) {
-    setInterval (function (){
-      for (server of client.guilds){
-        message.channel.send(user[1].username);
-      }       
-   }, 10000);
+   var guilds = client.guilds;
+  message.channel.send(guilds);
 }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
