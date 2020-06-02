@@ -1,6 +1,5 @@
 dependencies:
   '@discordjs/opus': 0.3.2
-  covidapi: 0.5.0
   dblapi.js: 2.4.0
   discord.js: 11.6.4
   discord.js-minesweeper: 1.0.5
@@ -11,15 +10,12 @@ dependencies:
   ffmpeg-static: 4.2.2
   fs: 0.0.2
   genius-lyrics: 3.0.0
+  node-fetch: 2.6.0
   opusscript: 0.0.7
   request: 2.88.2
   youtube-search: 1.1.4
   ytdl-core: 2.1.5
 packages:
-  /@aero/centra/1.0.3:
-    dev: false
-    resolution:
-      integrity: sha512-Ljd3utKoMcXiMSLr4uxMD9EAFeqw2nOEGfvMXVRKX4sT1OlYuUVQEz1Xrfi5z0RNrGXjm50lJq1jLlRW4FYcEA==
   /@derhuerst/http-basic/8.2.0:
     dependencies:
       caseless: 0.12.0
@@ -57,7 +53,7 @@ packages:
       integrity: sha512-T/ubykd4Xi19vDfw7/Oe+iTQBJ28yMI2PQAzK+Zue0PB9OpEYaeIXU7k5255061RwL+rHX9w7P/P2of+x2Vu2A==
   /@types/cheerio/0.22.18:
     dependencies:
-      '@types/node': 14.0.5
+      '@types/node': 14.0.9
     dev: false
     resolution:
       integrity: sha512-Fq7R3fINAPSdUEhOyjG4iVxgHrOnqDJbY0/BUuiN0pvD/rfmZWekVZnv+vcs8TtpA2XF50uv50LaE4EnpEL/Hw==
@@ -65,10 +61,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5SCfvCxV74kzR3uWgTYiGxrd69TbT1I6+cMx1A5kEly/IVveJBimtAMlXiEyVFn5DvUFewQWxOOiJhlxeQwxgA==
-  /@types/node/14.0.5:
+  /@types/node/14.0.9:
     dev: false
     resolution:
-      integrity: sha512-90hiq6/VqtQgX8Sp0EzeIsv3r+ellbGj4URKj5j30tLlZvRUpnAe9YbYnjl3pJM93GyXU0tghHhvXHq+5rnCKA==
+      integrity: sha512-0sCTiXKXELOBxvZLN4krQ0FPOAA7ij+6WwvD0k/PHd9/KAkr4dXel5J9fh6F4x1FwAQILqAWkmpeuS6mjf1iKA==
   /abbrev/1.1.1:
     dev: false
     resolution:
@@ -344,13 +340,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-  /covidapi/0.5.0:
-    dependencies:
-      '@aero/centra': 1.0.3
-    deprecated: moved to official location. please use novelcovid v2
-    dev: false
-    resolution:
-      integrity: sha512-v0gPU90wLCl+GqaLwZ6wRybdVF/jNZdlDqsKuP19DSFDcF1QMgCZzBTnORy1SzhyPiKuZ0FrcArL+DCu2Yf2Hw==
   /css-select/1.2.0:
     dependencies:
       boolbase: 1.0.0
@@ -1225,6 +1214,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ASCL5U13as7HhOExbT6OlWJJUV/lLzL2voOSP1UVehpRD8FbSrSDjfScK/KwAvVTI5AS6r4VwbOMlIqtvRidnA==
+  /node-fetch/2.6.0:
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
   /nopt/4.0.3:
     dependencies:
       abbrev: 1.1.1
@@ -1325,7 +1320,7 @@ packages:
       integrity: sha1-juqz5U+laSD+Fro493+iGqzC104=
   /parse5/3.0.3:
     dependencies:
-      '@types/node': 14.0.5
+      '@types/node': 14.0.9
     dev: false
     resolution:
       integrity: sha512-rgO9Zg5LLLkfJF9E6CCmXlSE4UVceloys8JrFqCcHloC3usd/kJCyPDwH2SOlzix2j3xaP9sUX3e8+kvkuleAA==
@@ -1874,7 +1869,6 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@discordjs/opus': ^0.3.2
-  covidapi: ^0.5.0
   dblapi.js: ^2.4.0
   discord.js: ^11.5.1
   discord.js-minesweeper: ^1.0.5
@@ -1885,6 +1879,7 @@ specifiers:
   ffmpeg-static: ^4.2.2
   fs: ^0.0.2
   genius-lyrics: ^3.0.0
+  node-fetch: ^2.6.0
   opusscript: 0.0.7
   request: ^2.88.2
   youtube-search: ^1.1.4
