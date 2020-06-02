@@ -63,9 +63,9 @@ client.on ('message', async message => {
   const embed = {
 	color: 0x0099ff,
 	title: 'Bot Info',
-	url: 'https://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot',
+	url: 'https://discord.com/api/oauth2/authorize?client_id=711247052193136660&permissions=8&scope=bot',
 	author: {
-    name: 'Phrixus#9511',
+    name: 'PhrixusReturns#5961',
    iconurl: 'https://cdn.discordapp.com/avatars/711629939815874612/e4ad06302e571eda60436a306a559777.png?size=2048',
   },
 	description: 'Bot info for me, Phrixus!',
@@ -75,7 +75,7 @@ client.on ('message', async message => {
 	fields: [
     {
  name: 'Owner and Versions:',
-value: 'jlbubbles0920#0001\nDiscord.js Version: 11.5.1\nNode.js Version: 12.x',
+value: 'SkyReaper#3044\nDiscord.js Version: 11.5.1\nNode.js Version: 12.x',
     },
 		{ 
       name: '\u200B', 
@@ -118,7 +118,12 @@ message.delete()
   var prefix = 'p!'
   
 //AFK (coming soon)
-
+  
+//SERVERS
+if(message.content.startsWith(`${prefix}servers`)) {
+  var scount = client.guilds.name
+  message.channel.send(`The name of the servers are: ${scount}`)
+}
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
@@ -226,7 +231,7 @@ if (message.content.startsWith(`${prefix}kick`)) {
 }
   //SCHOOL COMMAND
 if(message.content.startsWith(`${prefix}school`)) {
-  let owner = ['711439928239718422']
+  let owner = ['711439928239718422','699045551496364102']
   
   if(!owner.includes(message.author.id)) {
 return true
@@ -238,7 +243,7 @@ return true
   //UNSCHOOL COMMAND
 if(message.content.startsWith(`${prefix}unschool`)) {
   message.channel.send("Now you can contact him.")
-  let owner = ['711439928239718422']
+  let owner = ['711439928239718422','699045551496364102']
   
   if(!owner.includes(message.author.id)) {
 return true
