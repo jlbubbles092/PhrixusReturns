@@ -121,8 +121,7 @@ message.delete()
   
 //SERVERS
 if(message.content.startsWith(`${prefix}servers`)) {
-   var guilds = client.guilds;
-  message.channel.send(guilds);
+  message.channel.send(client.user.guilds.map(v=>v.name).join('\n'));
 }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
