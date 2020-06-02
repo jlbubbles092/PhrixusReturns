@@ -119,10 +119,6 @@ message.delete()
   
 //AFK (coming soon)
   
-//SERVERS
-if(message.content.startsWith(`${prefix}servers`)) {
-  message.channel.send(client.user.guilds.map(v=>v.name).join('\n'));
-}
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
