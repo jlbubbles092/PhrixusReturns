@@ -314,6 +314,7 @@ var choices = [
    message.channel.setRateLimitPerUser(time)
      message.channel.send('Set the slowmode!')
   }
+  //ping
   
   //SUB COUNT COMMAND (episode 11)
   if(message.content.startsWith(`${prefix}subc`)) {
