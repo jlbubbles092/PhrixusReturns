@@ -1,0 +1,11 @@
+# Packages
+node_modules/
+yarn.lock
+package-lock.json
+
+# Secrets
+*.env 
+
+# Log files
+logs/
+*.log

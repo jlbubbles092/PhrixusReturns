@@ -4,6 +4,7 @@ const ytdl = require('ytdl-core');
 var fetch = require('node-fetch');
 
 const app = express();
+require('help.js')
 
 // ---------------------------------
 const client = new Discord.Client()

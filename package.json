@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
-    "dblapi.js": "^2.4.0",
+    "dblapi.js": "latest",
     "discord.js": "^11.5.1",
     "discord.js-minesweeper": "^1.0.5",
     "eris": "^0.13.1",
