@@ -375,7 +375,9 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     message.channel.send(mines)
     // New message
     if(message.content.startsWith(`${prefix}new`)) {
-client.channels.get(args[1]).send('This is a  message!') //client.cache.channels.get('id').send()
+      const args = message.content.trim().split(/ +/g);
+      
+client.channels.get('').send(args)
   message.reply('Sent!!')
 }
   
