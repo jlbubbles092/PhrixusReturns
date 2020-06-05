@@ -1,12 +1,9 @@
 const Discord = require('discord.js');
-const DBL = require('dblapi.js');
 const express = require('express');
-const http = require('http');
 const ytdl = require('ytdl-core');
 var fetch = require('node-fetch');
 
 const app = express();
-const server = http.createServer(app);
 
 // ---------------------------------
 const client = new Discord.Client()
