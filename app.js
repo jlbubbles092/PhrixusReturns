@@ -335,15 +335,7 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     });
     var mines = minesweeper.start()
     message.channel.send(mines)
-    // New message
-    if(message.content.startsWith(`${prefix}new`)) {
-     var text = message.content.split(' ').slice(1).join(' ')
-     var text2 = message.content.split(' ').slice(1).join(' ')
-    if(!text) return message.reply('ID?')
-    if(!text2) return message.reply('Message?')
-client.channels.get(text).send(text2)
-  message.reply('Sent!!')
-}
+    
   
   }
   
