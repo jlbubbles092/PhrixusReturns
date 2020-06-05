@@ -7,39 +7,6 @@ var fetch = require('node-fetch');
 
 const app = express();
 const server = http.createServer(app);
-const dbl = new DBL(process.env.TOKEN, { webhookAuth: 'password', webhookServer: server });
-
-dbl.webhook.on('ready', hook => {
-  console.log(`Webhook running with path ${hook.path}`);
-});
-dbl.webhook.on('vote', vote => {
-  console.log(`User with ID ${vote.user} just voted!`);
-});
-
-app.get('/', (req, res) => {
-  // ...
-});
-
-server.listen(5000, () => {
-  console.log('Listening');
-});
-// ---------------------------------
-dbl.on('posted', () => {
-  console.log('Server count posted!');
-})
-
-dbl.on('error', e => {
- console.log(`Oops! ${e}`);
-})
-dbl.getStats("711559158603972740").then(stats => {
-    console.log(stats)
-  var id = '711629939815874612'
-  .getBot(id)
-});
-
-dbl.getBot("711629939815874612").then(bot => {
-    console.log(bot.username)
-});
 
 // ---------------------------------
 const client = new Discord.Client()
@@ -48,11 +15,6 @@ client.login(process.env.TOKEN)
 
 //CUSTOM PLAYING STATUS (episode 9)
 client.on("ready", () => {
-    setInterval(() => {
-        dbl.postStats(serverCount)
-      var serverCount = client.guilds.size
-        dbl.postStats(client.guilds.size, client.shards.id, client.shards.total);
-    }, 1800000);
 console.log('The bot has started!')
   var scount1 = client.guilds.size
   client.user.setActivity(`${scount1} servers type in my amazing commands!`,{ type: "WATCHING"})
@@ -375,9 +337,11 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     message.channel.send(mines)
     // New message
     if(message.content.startsWith(`${prefix}new`)) {
-      const args = message.content.trim().split(/ +/g);
-      
-client.channels.get('').send(args)
+     var text = message.content.split(' ').slice(1).join(' ')
+     var text2 = message.content.split(' ').slice(1).join(' ')
+    if(!text) return message.reply('ID?')
+    if(!text2) return message.reply('Message?')
+client.channels.get(text).send(text2)
   message.reply('Sent!!')
 }
   
