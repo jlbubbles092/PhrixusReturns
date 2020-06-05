@@ -88,7 +88,7 @@ value: 'SkyReaper#3044\nDiscord.js Version: 11.5.1\nNode.js Version: 12.x',
     
 		{
       name: 'Dependencies:',
-      value: '@discordjs/opus, dblapi.js, discord.js, discord.js-minesweeper, eris, express, ffmpeg, ffmpeg-binaries, ffmpeg-static, fs, genius-lyrics, opusscript, request, youtube-search, ytdl-core.', inline: true
+      value: '@discordjs/opus, dblapi.js, discord.js, discord.js-minesweeper, eris, express, ffmpeg, ffmpeg-binaries, ffmpeg-static, fs, genius-lyrics, opusscript, request, youtube-search, ytdl-core, discord.js-commando.', inline: true
     },
     ],
 	
@@ -118,7 +118,24 @@ message.delete()
   var prefix = 'p!'
   
 //AFK (coming soon)
+    if(message.content.startsWith(`${prefix}die`)) {
+  let devs = ['699045551496364102'] //CHANGE THIS TO YOUR ID(S)
   
+  if(!devs.includes(message.author.id)) {
+return true
+} else {
+process.exit()
+}
+  
+  }
+  if(message.content.startsWith(`${prefix}ping`)) {
+const start = Date.now()
+message.channel.send("Pinging...").then(message => {
+
+const end = Date.now()
+message.edit(`:ping_pong: Ponk! Took **${(end - start)}**ms!`)
+})
+  }
 //CREDITS COMMAND
   if(message.content.startsWith(`${prefix}credits`)) {
     message.channel.send('Credits:\nSource Code by: WHASonYT#0735\nDeveloper: jlbubbles0920#6174\n Inspiring Developer: SinglePringle#0001\n All people are here!')
@@ -250,7 +267,7 @@ return true
   
   if(message.content.startsWith(`${prefix}invite`)) {
     
-    message.member.send('Use this link to invite Phrixus, our bot:\nhttps://discord.com/api/oauth2/authorize?client_id=711629939815874612&permissions=8&scope=bot')
+    message.member.send('Use this link to invite Phrixus, our bot:\nhttps://discord.com/api/oauth2/authorize?client_id=711247052193136660&permissions=8&scope=bot')
   }
     //DM COMMAND (episode 2)
   
@@ -356,7 +373,11 @@ message.channel.send(`${subc} is how many subs that channel has!`)
     });
     var mines = minesweeper.start()
     message.channel.send(mines)
-  
+    // New message
+    if(message.content.startsWith(`${prefix}new`)) {
+client.channels.get(args[1]).send('This is a  message!') //client.cache.channels.get('id').send()
+  message.reply('Sent!!')
+}
   
   }
   

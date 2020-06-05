@@ -2,6 +2,7 @@ dependencies:
   '@discordjs/opus': 0.3.2
   dblapi.js: 2.4.0
   discord.js: 11.6.4
+  discord.js-commando: 0.10.0
   discord.js-minesweeper: 1.0.5
   eris: 0.13.1
   express: 4.17.1
@@ -293,6 +294,12 @@ packages:
       node: '>= 0.6.x'
     resolution:
       integrity: sha1-Br42f+v9oMMwqh4qBy09yXYkJdQ=
+  /common-tags/1.8.0:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-6P6g0uetGpW/sdyUy/iQQCbFF0kWVMSIVSyYz7Zgjcgh8mgw8PQzDNZeyZ5DQ2gM7LBoZPHmnjz8rUthkBG5tw==
   /concat-map/0.0.1:
     dev: false
     resolution:
@@ -491,6 +498,19 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+hN8S9aY7fVc1c0CrFWfkaTEups=
+  /discord.js-commando/0.10.0:
+    dependencies:
+      common-tags: 1.8.0
+      escape-string-regexp: 1.0.5
+      require-all: 2.2.0
+    dev: false
+    engines:
+      node: '>=7.6.0'
+    peerDependencies:
+      discord.js: ^11.2.0
+      sqlite: ^2.0.0
+    resolution:
+      integrity: sha1-v6mL8zEIcDdvPHoNe3Nqaj5dCg8=
   /discord.js-minesweeper/1.0.5:
     dev: false
     engines:
@@ -612,6 +632,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
+  /escape-string-regexp/1.0.5:
+    dev: false
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
   /etag/1.8.1:
     dev: false
     engines:
@@ -1496,6 +1522,10 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==
+  /require-all/2.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-tEIMIzrAKC0P9Jsnf7iAqLXeCJQ=
   /rimraf/3.0.2:
     dependencies:
       glob: 7.1.6
@@ -1871,6 +1901,7 @@ specifiers:
   '@discordjs/opus': ^0.3.2
   dblapi.js: ^2.4.0
   discord.js: ^11.5.1
+  discord.js-commando: ^0.10.0
   discord.js-minesweeper: ^1.0.5
   eris: ^0.13.1
   express: ^4.17.1
